@@ -579,18 +579,27 @@ function initCertificateModal() {
   if (!certModal) return;
 
   function openCert(card) {
-    const name = card.getAttribute('data-cert-name');
-    const issuer = card.getAttribute('data-cert-issuer');
-    const year = card.getAttribute('data-cert-year');
-    const credId = card.getAttribute('data-cert-id');
-    const desc = card.getAttribute('data-cert-desc');
+    const name = card.getAttribute('data-cert-name') || '';
+    const issuer = card.getAttribute('data-cert-issuer') || '';
+    const year = card.getAttribute('data-cert-year') || '';
+    const imgSrc = card.getAttribute('data-cert-img') || '';
 
-    document.getElementById('certModalYear').textContent = year;
-    document.getElementById('certModalIssuer').textContent = issuer;
-    document.getElementById('certModalName').textContent = name;
-    document.getElementById('certModalDesc').textContent = desc;
-    document.getElementById('certModalId').textContent = `ID Kredensial: ${credId}`;
-    document.getElementById('certModalYearFooter').textContent = `Tahun Penerbitan: ${year}`;
+    const yearEl = document.getElementById('certModalYear');
+    const issuerEl = document.getElementById('certModalIssuer');
+    const nameEl = document.getElementById('certModalName');
+    const imgEl = document.getElementById('certModalImg');
+    const fullLinkEl = document.getElementById('certModalFullLink');
+
+    if (yearEl) yearEl.textContent = year;
+    if (issuerEl) issuerEl.textContent = issuer;
+    if (nameEl) nameEl.textContent = name;
+    if (imgEl && imgSrc) {
+      imgEl.src = imgSrc;
+      imgEl.alt = name;
+    }
+    if (fullLinkEl && imgSrc) {
+      fullLinkEl.href = imgSrc;
+    }
 
     certModal.classList.add('open');
     document.body.style.overflow = 'hidden';
