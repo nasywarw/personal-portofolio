@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initSectionSpy();
   initProjectModalWithCarousel();
-  initCommunityCarousel();
+  initDocCarousels();
   initCertificateModal();
   initEmailCopy();
 });
@@ -134,18 +134,15 @@ const PROJECTS_DATA = {
     slides: [
       {
         title: 'Tampilan Arsitektur Fasad Depan Istana Siak',
-        caption: 'Model 3D arsitektur eksterior dengan proporsi akurat dan pilar khas Melayu-Eropa.',
-        type: 'siak-front'
+        caption: 'Model 3D arsitektur eksterior dengan proporsi akurat dan pilar khas Melayu-Eropa.'
       },
       {
         title: 'Tampilan Interior & Tangga Khas',
-        caption: 'Pemodelan ornamen lantai dua, railing tangga, dan ukiran interior bersejarah.',
-        type: 'siak-interior'
+        caption: 'Pemodelan ornamen lantai dua, railing tangga, dan ukiran interior bersejarah.'
       },
       {
         title: 'Pengujian Lingkungan VR Meta Quest',
-        caption: 'Simulasi interaktif 6DoF dan navigasi teleportasi dengan framerate stabil 72 FPS.',
-        type: 'siak-vr'
+        caption: 'Simulasi interaktif 6DoF dan navigasi teleportasi dengan framerate stabil 72 FPS.'
       }
     ]
   },
@@ -168,18 +165,15 @@ const PROJECTS_DATA = {
     slides: [
       {
         title: 'Tampilan Viewfinder Kamera Deteksi Real-Time',
-        caption: 'Deteksi bounding box otomatis dengan tingkat kepercayaan api 94.6% dan latensi 18ms.',
-        type: 'sijagat-cam'
+        caption: 'Deteksi bounding box otomatis dengan tingkat kepercayaan api 94.6% dan latensi 18ms.'
       },
       {
         title: 'Antarmuka Pengujian Gambar & Video',
-        caption: 'Pengguna dapat menguji file rekaman lokal dan melihat visualisasi bounding box.',
-        type: 'sijagat-input'
+        caption: 'Pengguna dapat menguji file rekaman lokal dan melihat visualisasi bounding box.'
       },
       {
         title: 'Dashboard Riwayat Log Deteksi',
-        caption: 'Pencatatan waktu kejadian, koordinat visual, dan tingkat keyakinan model.',
-        type: 'sijagat-history'
+        caption: 'Pencatatan waktu kejadian, koordinat visual, dan tingkat keyakinan model.'
       }
     ]
   },
@@ -202,18 +196,15 @@ const PROJECTS_DATA = {
     slides: [
       {
         title: 'Dashboard Utama Sistem Manajemen Internal',
-        caption: 'Ikhtisar analitik kehadiran pegawai harian dan status kepatuhan keselamatan kerja K3.',
-        type: 'nusareka-dash'
+        caption: 'Ikhtisar analitik kehadiran pegawai harian dan status kepatuhan keselamatan kerja K3.'
       },
       {
         title: 'Modul Manajemen Karyawan & Slip Gaji',
-        caption: 'Pencatatan otomatis jam lembur, potongan pajak, dan penerbitan slip gaji digital PDF.',
-        type: 'nusareka-payroll'
+        caption: 'Pencatatan otomatis jam lembur, potongan pajak, dan penerbitan slip gaji digital PDF.'
       },
       {
         title: 'Modul Pengawasan Safety & Absensi',
-        caption: 'Sistem logbook K3 dan pencatatan presensi digital karyawan proyek.',
-        type: 'nusareka-safety'
+        caption: 'Sistem logbook K3 dan pencatatan presensi digital karyawan proyek.'
       }
     ]
   },
@@ -236,18 +227,15 @@ const PROJECTS_DATA = {
     slides: [
       {
         title: 'Tampilan Utama Aplikasi Mobile Merchant',
-        caption: 'Alur penerimaan QRIS cepat, ringkasan omzet harian, dan notifikasi suara transaksi.',
-        type: 'dzapin-mobile'
+        caption: 'Alur penerimaan QRIS cepat, ringkasan omzet harian, dan notifikasi suara transaksi.'
       },
       {
         title: 'Dashboard Web Portal Analitik Transaksi',
-        caption: 'Grafik riwayat transaksi mingguan dan filter mutasi rekening toko.',
-        type: 'dzapin-web'
+        caption: 'Grafik riwayat transaksi mingguan dan filter mutasi rekening toko.'
       },
       {
         title: 'Komponen Design System Terstandar',
-        caption: 'Skala tipografi, palet warna perbankan, variasi tombol aksi, dan tabel data terstruktur.',
-        type: 'dzapin-system'
+        caption: 'Skala tipografi, palet warna perbankan, variasi tombol aksi, dan tabel data terstruktur.'
       }
     ]
   },
@@ -270,18 +258,15 @@ const PROJECTS_DATA = {
     slides: [
       {
         title: 'Tampilan Peta Spasial Interaktif Pekanbaru',
-        caption: 'Penanda titik lokasi lapangan futsal dengan filter radius jarak dan jenis lantai.',
-        type: 'futsal-map'
+        caption: 'Penanda titik lokasi lapangan futsal dengan filter radius jarak dan jenis lantai.'
       },
       {
         title: 'Halaman Detail Fasilitas & Ulasan',
-        caption: 'Informasi kelayakan rumput sintetis/vinyl, penerangan lampu, dan ketersediaan shower.',
-        type: 'futsal-detail'
+        caption: 'Informasi kelayakan rumput sintetis/vinyl, penerangan lampu, dan ketersediaan shower.'
       },
       {
         title: 'Alur Pemesanan Jadwal Realtime',
-        caption: 'Pemilihan slot waktu sewa lapangan dan konfirmasi tanda jadi digital.',
-        type: 'futsal-booking'
+        caption: 'Pemilihan slot waktu sewa lapangan dan konfirmasi tanda jadi digital.'
       }
     ]
   }
@@ -289,35 +274,6 @@ const PROJECTS_DATA = {
 
 let projectCarouselInterval = null;
 let currentProjectSlideIndex = 0;
-
-function generateSlideGraphic(type) {
-  // Menghasilkan grafik simulasi antarmuka web yang bersih dan elegan
-  return `
-    <div style="background-color: #252422; border-radius: 0.5rem; padding: 1.25rem; color: #FAF8F5; min-height: 14rem; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace; border: 1px solid #3D3A33;">
-      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #3D3A33; padding-bottom: 0.4rem; font-size: 0.7rem; color: #A8A49A;">
-        <span style="display: flex; items-center; gap: 0.35rem;">
-          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #8C7965;"></span>
-          PREVIEW_WEB_INTERFACE
-        </span>
-        <span>100% RESPONSIVE</span>
-      </div>
-      
-      <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
-        <div style="font-family: var(--font-serif); font-size: 1.15rem; color: #E7E4DC; margin-bottom: 0.35rem;">
-          Tampilan Antarmuka Terverifikasi
-        </div>
-        <div style="font-size: 0.75rem; color: #A8A49A; max-width: 20rem; margin: 0 auto; line-height: 1.5;">
-          Cuplikan visual sistem dan alur kerja yang dibangun secara fungsional.
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: space-between; border-top: 1px solid #3D3A33; padding-top: 0.4rem; font-size: 0.68rem; color: #8E8B83;">
-        <span>MODUL DIGITAL</span>
-        <span style="color: #8C7965;">ARSIP DOKUMEN PROYEK</span>
-      </div>
-    </div>
-  `;
-}
 
 function initProjectModalWithCarousel() {
   const modal = document.getElementById('projectModal');
@@ -329,7 +285,6 @@ function initProjectModalWithCarousel() {
   const prevBtn = document.getElementById('projectCarouselPrev');
   const nextBtn = document.getElementById('projectCarouselNext');
   const indicatorsContainer = document.getElementById('projectCarouselIndicators');
-  const captionEl = document.getElementById('projectCarouselCaption');
 
   if (!modal) return;
 
@@ -341,26 +296,34 @@ function initProjectModalWithCarousel() {
     indicatorsContainer.innerHTML = '';
 
     slides.forEach((slide, idx) => {
-      // Slide element
       const slideDiv = document.createElement('div');
       slideDiv.className = 'carousel-slide';
       slideDiv.style.padding = '0.5rem';
       slideDiv.innerHTML = `
-        <div style="border-radius: 0.5rem; overflow: hidden; border: 1px solid var(--border-color);">
-          ${generateSlideGraphic(slide.type)}
-        </div>
-        <div style="padding: 0.65rem 0.25rem 0.25rem;">
-          <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 600; color: var(--text-main);">
-            ${slide.title}
+        <div style="background-color: #252422; border-radius: 0.5rem; padding: 1.5rem; color: #FAF8F5; min-height: 13rem; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace; border: 1px solid #3D3A33;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #3D3A33; padding-bottom: 0.4rem; font-size: 0.7rem; color: #A8A49A;">
+            <span style="display: flex; align-items: center; gap: 0.35rem;">
+              <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #8C7965;"></span>
+              WEB_PREVIEW_INTERFACE
+            </span>
+            <span>100% RESPONSIVE</span>
           </div>
-          <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;">
-            ${slide.caption}
+          <div style="text-align: center; margin: auto 0; padding: 1.25rem 0;">
+            <div style="font-family: var(--font-serif); font-size: 1.15rem; color: #E7E4DC; margin-bottom: 0.35rem;">
+              ${slide.title}
+            </div>
+            <div style="font-size: 0.75rem; color: #A8A49A; max-width: 24rem; margin: 0 auto; line-height: 1.6; text-align: justify; text-justify: inter-word;">
+              ${slide.caption}
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-top: 1px solid #3D3A33; padding-top: 0.4rem; font-size: 0.68rem; color: #8E8B83;">
+            <span>MODUL DIGITAL</span>
+            <span style="color: #8C7965;">DOKUMEN RESMI</span>
           </div>
         </div>
       `;
       track.appendChild(slideDiv);
 
-      // Indicator dot
       const dot = document.createElement('div');
       dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
       dot.addEventListener('click', () => goToSlide(idx));
@@ -399,7 +362,7 @@ function initProjectModalWithCarousel() {
     clearInterval(projectCarouselInterval);
     projectCarouselInterval = setInterval(() => {
       nextSlide(total);
-    }, 3500); // Otomatis berputar tiap 3.5 detik
+    }, 3500);
   }
 
   function openProject(projectId) {
@@ -416,7 +379,6 @@ function initProjectModalWithCarousel() {
     document.getElementById('modalProjectChallenge').textContent = data.challenge;
     document.getElementById('modalProjectSolution').textContent = data.solution;
 
-    // Tech pills
     const techContainer = document.getElementById('modalProjectTech');
     techContainer.innerHTML = '';
     data.tech.forEach(t => {
@@ -426,21 +388,19 @@ function initProjectModalWithCarousel() {
       techContainer.appendChild(span);
     });
 
-    // Highlights
     const highlightsContainer = document.getElementById('modalProjectHighlights');
     highlightsContainer.innerHTML = '';
     data.highlights.forEach(h => {
       const li = document.createElement('li');
       li.style.lineHeight = '1.6';
       li.style.marginBottom = '0.35rem';
+      li.style.textAlign = 'justify';
       li.textContent = h;
       highlightsContainer.appendChild(li);
     });
 
-    // Setup & render carousel
     renderCarousel(data.slides);
 
-    // Prev / Next button listeners
     prevBtn.onclick = () => {
       prevSlide(data.slides.length);
       startCarouselAutoPlay(data.slides.length);
@@ -450,7 +410,6 @@ function initProjectModalWithCarousel() {
       startCarouselAutoPlay(data.slides.length);
     };
 
-    // Pause on hover
     const carouselBox = document.getElementById('projectCarouselBox');
     carouselBox.onmouseenter = () => clearInterval(projectCarouselInterval);
     carouselBox.onmouseleave = () => startCarouselAutoPlay(data.slides.length);
@@ -488,84 +447,92 @@ function initProjectModalWithCarousel() {
 }
 
 /* -------------------------------------------------------------------------
-   4. Carousel Otomatis Dokumentasi Pengabdian kepada Masyarakat
+   4. Carousel Otomatis di Bagian Foto Dokumentasi PKM (Per Card)
    ------------------------------------------------------------------------- */
-let communityCarouselInterval = null;
-let currentCommunityIndex = 0;
+function initDocCarousels() {
+  const docCarousels = document.querySelectorAll('.doc-carousel-box');
 
-function initCommunityCarousel() {
-  const track = document.getElementById('communityCarouselTrack');
-  const prevBtn = document.getElementById('communityCarouselPrev');
-  const nextBtn = document.getElementById('communityCarouselNext');
-  const indicatorsContainer = document.getElementById('communityCarouselIndicators');
-  const wrapper = document.getElementById('communityCarouselWrapper');
+  docCarousels.forEach((box) => {
+    const track = box.querySelector('.doc-carousel-track');
+    const slides = box.querySelectorAll('.doc-slide');
+    const dotsContainer = box.querySelector('.carousel-indicators');
+    const prevBtn = box.querySelector('.carousel-btn-prev');
+    const nextBtn = box.querySelector('.carousel-btn-next');
 
-  if (!track || !indicatorsContainer) return;
+    if (!track || slides.length === 0) return;
 
-  const slides = track.querySelectorAll('.carousel-slide');
-  const total = slides.length;
-  if (total === 0) return;
+    let currentIndex = 0;
+    const total = slides.length;
+    let timer = null;
 
-  // Build dots
-  indicatorsContainer.innerHTML = '';
-  slides.forEach((_, idx) => {
-    const dot = document.createElement('div');
-    dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
-    dot.addEventListener('click', () => goToCommunitySlide(idx));
-    indicatorsContainer.appendChild(dot);
-  });
+    // Build dots
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => {
+          goTo(idx);
+          restartTimer();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
 
-  function goToCommunitySlide(index) {
-    currentCommunityIndex = index;
-    track.style.transform = `translateX(-${index * 100}%)`;
+    function goTo(idx) {
+      currentIndex = idx;
+      track.style.transform = `translateX(-${idx * 100}%)`;
 
-    const dots = indicatorsContainer.querySelectorAll('.carousel-dot');
-    dots.forEach((dot, idx) => {
-      if (idx === index) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach((d, i) => {
+          if (i === idx) d.classList.add('active');
+          else d.classList.remove('active');
+        });
       }
-    });
-  }
+    }
 
-  function nextCommunitySlide() {
-    const nextIdx = (currentCommunityIndex + 1) % total;
-    goToCommunitySlide(nextIdx);
-  }
+    function next() {
+      const n = (currentIndex + 1) % total;
+      goTo(n);
+    }
 
-  function prevCommunitySlide() {
-    const prevIdx = (currentCommunityIndex - 1 + total) % total;
-    goToCommunitySlide(prevIdx);
-  }
+    function prev() {
+      const p = (currentIndex - 1 + total) % total;
+      goTo(p);
+    }
 
-  function startCommunityAutoPlay() {
-    clearInterval(communityCarouselInterval);
-    communityCarouselInterval = setInterval(() => {
-      nextCommunitySlide();
-    }, 4000); // Berputar otomatis tiap 4 detik
-  }
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, 3800);
+    }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      prevCommunitySlide();
-      startCommunityAutoPlay();
-    });
-  }
+    function restartTimer() {
+      clearInterval(timer);
+      startTimer();
+    }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      nextCommunitySlide();
-      startCommunityAutoPlay();
-    });
-  }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        next();
+        restartTimer();
+      });
+    }
 
-  if (wrapper) {
-    wrapper.addEventListener('mouseenter', () => clearInterval(communityCarouselInterval));
-    wrapper.addEventListener('mouseleave', () => startCommunityAutoPlay());
-  }
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prev();
+        restartTimer();
+      });
+    }
 
-  startCommunityAutoPlay();
+    box.addEventListener('mouseenter', () => clearInterval(timer));
+    box.addEventListener('mouseleave', () => startTimer());
+
+    startTimer();
+  });
 }
 
 /* -------------------------------------------------------------------------

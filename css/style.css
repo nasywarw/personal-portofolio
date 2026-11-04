@@ -110,13 +110,18 @@ button {
   background-color: var(--bg-secondary);
 }
 
-/* Typography */
+/* Typography & Justify */
 .font-serif {
   font-family: var(--font-serif);
 }
 
 .font-sans {
   font-family: var(--font-sans);
+}
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .section-tag {
@@ -181,10 +186,12 @@ button {
   font-size: 0.875rem;
   color: var(--text-secondary);
   max-width: 25rem;
-  line-height: 1.6;
+  line-height: 1.65;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-/* Navigation */
+/* Navigation (Top bar clean) */
 .site-header {
   position: fixed;
   top: 0;
@@ -284,32 +291,6 @@ button {
   height: 2px;
   background-color: var(--accent);
   border-radius: 9999px;
-}
-
-.header-status {
-  display: none;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
-  border: 1px solid var(--border-color);
-  background-color: rgba(239, 238, 232, 0.4);
-}
-
-@media (min-width: 768px) {
-  .header-status {
-    display: inline-flex;
-  }
-}
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #10b981;
 }
 
 .mobile-toggle-btn {
@@ -425,7 +406,7 @@ button {
 
 @media (min-width: 992px) {
   .hero-grid {
-    grid-template-columns: 1.25fr 0.75fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 3.5rem;
   }
 }
@@ -441,6 +422,13 @@ button {
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
 }
 
 .hero-title {
@@ -469,9 +457,11 @@ button {
 .hero-bio {
   font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   max-width: 34rem;
   margin-bottom: 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .hero-meta-strip {
@@ -489,10 +479,10 @@ button {
   gap: 0.75rem;
 }
 
-/* Portrait Frame */
+/* Portrait Frame with Real User Photo */
 .portrait-card {
   position: relative;
-  max-width: 20rem;
+  max-width: 21rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -506,77 +496,61 @@ button {
 .portrait-frame {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  padding: 0.75rem;
+  border-radius: 1.15rem;
+  padding: 0.85rem;
   box-shadow: var(--shadow-elevated);
 }
 
 .portrait-inner {
-  aspect-ratio: 4 / 5;
-  border-radius: 0.75rem;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.85rem;
   background-color: #E7E4DC;
   border: 1px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1.5rem;
-  text-align: center;
+  justify-content: flex-end;
 }
 
-.portrait-tagline {
-  display: flex;
-  justify-content: space-between;
-  font-family: monospace;
-  font-size: 0.68rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
+.portrait-photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
 }
 
-.portrait-center {
-  margin-top: auto;
-  margin-bottom: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.85rem;
+.portrait-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(37, 37, 34, 0.75) 0%, rgba(37, 37, 34, 0.2) 40%, transparent 65%);
+  pointer-events: none;
 }
 
-.portrait-avatar {
-  width: 5.25rem;
-  height: 5.25rem;
-  border-radius: 50%;
-  background-color: var(--bg-main);
-  border: 2px solid var(--accent-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  color: var(--accent);
-  box-shadow: var(--shadow-subtle);
+.portrait-badge-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.15rem;
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 .portrait-name {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  color: var(--text-main);
+  color: #FFFFFF;
+  line-height: 1.25;
 }
 
 .portrait-role {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.88);
   font-family: monospace;
-}
-
-.portrait-footer {
-  border-top: 1px solid rgba(227, 224, 216, 0.8);
-  padding-top: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  color: var(--text-secondary);
+  margin-top: 0.2rem;
 }
 
 /* SECTION 02 — TENTANG SAYA */
@@ -591,15 +565,16 @@ button {
   flex-direction: column;
   gap: 1.35rem;
   font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .about-paragraphs p {
   color: #383733;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-/* SECTION 03 — PORTOFOLIO (Card Rapi, Nyaman, Tidak Terlalu Besar) */
+/* SECTION 03 — PORTOFOLIO (Card Rapi, Nyaman & Rata Kanan-Kiri) */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -675,8 +650,10 @@ button {
 .project-card-desc {
   font-size: 0.8rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   flex-grow: 1;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .project-card-skills {
@@ -708,33 +685,129 @@ button {
   font-weight: 600;
 }
 
-/* CAROUSEL OTOMATIS (KOMPONEN UMUM) */
-.carousel-container {
+/* SECTION 04 — PENGABDIAN KEPADA MASYARAKAT (3 Cards Awal dengan Carousel Foto Dokumentasi) */
+.community-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.community-card {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 0.85rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .community-card {
+    padding: 1.75rem 2rem;
+  }
+}
+
+.community-card:hover {
+  border-color: var(--accent);
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .community-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Foto Dokumentasi Carousel Slot di dalam Card */
+.doc-carousel-box {
+  aspect-ratio: 16 / 11;
+  border-radius: 0.65rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
-  border-radius: 0.75rem;
-  background-color: #FAF8F5;
-  border: 1px solid var(--border-color);
 }
 
-.carousel-track {
+.doc-carousel-track {
   display: flex;
-  transition: transform 0.45s ease-in-out;
   width: 100%;
+  height: 100%;
+  transition: transform 0.45s ease-in-out;
 }
 
-.carousel-slide {
+.doc-slide {
   min-width: 100%;
+  height: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
+.community-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.community-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.community-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.contributions-list {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-main);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.contribution-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bullet-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+/* CAROUSEL CONTROLS UTILITY */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: rgba(247, 246, 242, 0.92);
   border: 1px solid var(--border-color);
@@ -754,95 +827,39 @@ button {
 }
 
 .carousel-btn-prev {
-  left: 0.75rem;
+  left: 0.5rem;
 }
 
 .carousel-btn-next {
-  right: 0.75rem;
+  right: 0.5rem;
 }
 
 .carousel-indicators {
   position: absolute;
-  bottom: 0.75rem;
+  bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.4rem;
+  gap: 0.35rem;
   z-index: 5;
 }
 
 .carousel-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: rgba(140, 121, 101, 0.35);
+  background-color: rgba(140, 121, 101, 0.4);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .carousel-dot.active {
   background-color: var(--accent);
-  width: 18px;
-  border-radius: 4px;
+  width: 16px;
+  border-radius: 3px;
 }
 
-/* SECTION 04 — CAROUSEL DOKUMENTASI PENGABDIAN */
-.community-carousel-wrapper {
-  max-width: 52rem;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
-.community-slide-content {
-  padding: 1.75rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .community-slide-content {
-    grid-template-columns: 1fr 1fr;
-    padding: 2.25rem;
-    gap: 2rem;
-  }
-}
-
-.community-doc-frame {
-  aspect-ratio: 16 / 11;
-  border-radius: 0.65rem;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-}
-
-.community-info-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.community-slide-title {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--text-main);
-  line-height: 1.35;
-}
-
-.community-slide-desc {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-}
-
-/* SECTION 05 — SERTIFIKAT (Tanpa Kategori) */
+/* SECTION 05 — SERTIFIKAT */
 .certificates-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -880,6 +897,11 @@ button {
   box-shadow: var(--shadow-elevated);
 }
 
+.cert-card p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .cert-thumb-preview {
   aspect-ratio: 16 / 11;
   background-color: var(--bg-secondary);
@@ -901,7 +923,7 @@ button {
   line-height: 1.35;
 }
 
-/* SECTION 06 — KONTAK (Sederhana: Email, LinkedIn, GitHub) */
+/* SECTION 06 — KONTAK (Email, LinkedIn, GitHub) */
 .contact-simple-container {
   max-width: 44rem;
   margin-left: auto;
@@ -1055,6 +1077,11 @@ button {
   .modal-body {
     padding: 1.75rem 2rem;
   }
+}
+
+.modal-body p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .modal-footer {

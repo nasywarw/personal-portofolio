@@ -39,12 +39,6 @@
         <a href="#kontak" class="nav-link">Kontak</a>
       </nav>
 
-      <!-- Status Pill -->
-      <div class="header-status">
-        <span class="status-dot"></span>
-        <span>Tersedia untuk Peluang Baru</span>
-      </div>
-
       <!-- Tombol Menu Mobile -->
       <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -117,27 +111,21 @@
             </div>
           </div>
 
-          <!-- Sisi Kanan: Bingkai Potret Editorial -->
+          <!-- Sisi Kanan: Bingkai Potret Editorial dengan Foto Asli Nasywa -->
           <div class="hero-image-col">
             <div class="portrait-card">
               <div class="portrait-frame">
                 <div class="portrait-inner">
-                  <div class="portrait-tagline">
-                    <span>Identitas Profesional</span>
-                    <span>No. 001/ENG</span>
-                  </div>
+                  <!-- Foto Asli Pengguna -->
+                  <img src="images/profile.jpg" alt="Foto Profil Nasywa Rizka Winanda" class="portrait-photo-img">
+                  
+                  <!-- Gradient Overlay -->
+                  <div class="portrait-overlay-gradient"></div>
 
-                  <div class="portrait-center">
-                    <div class="portrait-avatar">NRW</div>
-                    <div>
-                      <div class="portrait-name">Nasywa Rizka Winanda</div>
-                      <div class="portrait-role">Informatics Graduate &bull; UI/UX &amp; Web</div>
-                    </div>
-                  </div>
-
-                  <div class="portrait-footer">
-                    <span>Pekanbaru, ID</span>
-                    <span style="color: var(--accent); font-weight: 500;">Aktif Berkarya</span>
+                  <!-- Badge Identitas di Bawah Foto -->
+                  <div class="portrait-badge-content">
+                    <div class="portrait-name">Nasywa Rizka Winanda</div>
+                    <div class="portrait-role">Informatics Graduate &bull; UI/UX &amp; Web</div>
                   </div>
                 </div>
               </div>
@@ -181,7 +169,7 @@
 
     <!-- =========================================================================
          SECTION 03 — PORTOFOLIO
-         Card rapi & nyaman: preview gambar, skill, deskripsi singkat
+         Card rapi & nyaman: preview gambar, skill, deskripsi singkat rata kanan-kiri
          Klik card -> Pop-up modal berisi carousel otomatis gambar web
          ========================================================================= -->
     <section id="portofolio" class="section-wrapper">
@@ -372,7 +360,7 @@
 
     <!-- =========================================================================
          SECTION 04 — PENGABDIAN KEPADA MASYARAKAT
-         (Carousel Otomatis Dokumentasi Kegiatan)
+         (3 Cards Awal — Carousel Otomatis di Bagian Foto Dokumentasinya)
          ========================================================================= -->
     <section id="pengabdian" class="section-wrapper section-alt">
       <div class="container">
@@ -391,148 +379,316 @@
           </p>
         </div>
 
-        <!-- Carousel Otomatis Dokumentasi Kegiatan -->
-        <div class="community-carousel-wrapper" id="communityCarouselWrapper">
-          <div class="carousel-container">
-            <div class="carousel-track" id="communityCarouselTrack">
-              
-              <!-- Slide 1: Pelatihan Bisnis Digital UMKM -->
-              <div class="carousel-slide">
-                <div class="community-slide-content">
-                  <div class="community-doc-frame">
+        <!-- 3 Cards Terstruktur (Setiap Slot Foto Dokumentasi Dilengkapi Carousel Otomatis) -->
+        <div class="community-cards-list">
+          
+          <!-- Card PKM 1: Pelatihan Bisnis Digital UMKM -->
+          <article class="community-card">
+            <div class="community-grid">
+              <!-- Slot Kiri: Carousel Foto Dokumentasi -->
+              <div class="doc-carousel-box">
+                <div class="doc-carousel-track">
+                  <!-- Slide Foto 1 -->
+                  <div class="doc-slide">
                     <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
-                      <span>DOKUMENTASI PKM 01</span>
+                      <span>FOTO DOKUMENTASI 01-A</span>
                       <span>2024</span>
                     </div>
-                    <div style="margin: auto 0; padding: 1.25rem 0;">
+                    <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
                       <div style="width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
                         01
                       </div>
                       <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main);">
-                        Dokumentasi Pelatihan UMKM
+                        Sesi Pendampingan UMKM
                       </div>
-                      <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.35rem;">
-                        Sesi pendampingan strategi pemasaran digital langsung kepada pelaku usaha mikro.
+                      <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                        Pemaparan materi strategi promosi produk dan katalog digital.
                       </div>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
-                      <span>Riau &bull; Civitas Akademika</span>
-                      <span style="font-family: monospace;">ARSIP_DOKUMENTASI</span>
+                      <span>Pelatihan Tatap Muka</span>
+                      <span style="font-family: monospace;">ARSIP_PKM</span>
                     </div>
                   </div>
 
-                  <div class="community-info-group">
-                    <span class="project-tag" style="background-color: var(--bg-secondary); align-self: flex-start;">PKM &bull; Bisnis Digital</span>
-                    <h3 class="community-slide-title">
-                      Strategi Pemasaran Produk UMKM di Era Digital
-                    </h3>
-                    <p class="community-slide-desc">
-                      Pelatihan bisnis digital untuk meningkatkan daya saing pelaku UMKM melalui pemanfaatan platform digital, katalog promosi, serta optimasi kanal media sosial untuk menjangkau pasar yang lebih luas.
-                    </p>
-                    <div style="border-top: 1px solid var(--border-color); padding-top: 0.5rem; font-size: 0.78rem; color: var(--text-secondary);">
-                      Peran: <strong style="color: var(--accent);">Fasilitator Pelatihan &amp; Pendamping Materi</strong>
+                  <!-- Slide Foto 2 -->
+                  <div class="doc-slide">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
+                      <span>FOTO DOKUMENTASI 01-B</span>
+                      <span>2024</span>
+                    </div>
+                    <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
+                      <div style="width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
+                        01
+                      </div>
+                      <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main);">
+                        Praktik Pembuatan Profil Toko
+                      </div>
+                      <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                        Pendampingan langsung pembuatan akun pemasaran online pelaku usaha.
+                      </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
+                      <span>Sesi Interaktif</span>
+                      <span style="font-family: monospace;">ARSIP_PKM</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tombol Navigasi Carousel Foto -->
+                <button class="carousel-btn carousel-btn-prev" aria-label="Foto sebelumnya">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" aria-label="Foto berikutnya">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+                <div class="carousel-indicators"></div>
+              </div>
+
+              <!-- Slot Kanan: Informasi & Deskripsi Rata Kanan Kiri -->
+              <div class="community-content">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+                  <span class="project-tag" style="background-color: var(--bg-secondary);">KEGIATAN 01</span>
+                  <span style="color: var(--text-secondary); font-family: monospace;">2024</span>
+                  <span style="color: var(--text-secondary);">&bull;</span>
+                  <span style="color: var(--text-secondary);">Program PKM Civitas Akademika</span>
+                </div>
+
+                <h3 class="community-title">
+                  Pelatihan Bisnis Digital: “Strategi Pemasaran Produk UMKM di Era Digital”
+                </h3>
+
+                <p class="community-desc">
+                  Pelatihan bisnis digital untuk membantu pelaku usaha mikro dalam meningkatkan visibilitas produk mereka melalui platform pemasaran daring, tata kelola promosi media sosial, dan pembuatan konten visual yang menarik guna memperluas jangkauan pasar.
+                </p>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+                    Peran: <span style="color: var(--accent); font-weight: 600;">Fasilitator Pelatihan &amp; Pendamping Materi</span>
+                  </div>
+                  <div class="contributions-list">
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Menyusun materi visual tentang strategi pemasaran dan foto produk sederhana dengan ponsel pintar.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Mendampingi langsung para peserta saat menyusun profil bisnis digital toko mereka.</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </article>
 
-              <!-- Slide 2: Workshop Administrasi Web Server dengan CWP -->
-              <div class="carousel-slide">
-                <div class="community-slide-content">
-                  <div class="community-doc-frame">
+          <!-- Card PKM 2: Workshop Administrasi Web Server dengan CWP -->
+          <article class="community-card">
+            <div class="community-grid">
+              <!-- Slot Kiri: Carousel Foto Dokumentasi -->
+              <div class="doc-carousel-box">
+                <div class="doc-carousel-track">
+                  <!-- Slide Foto 1 -->
+                  <div class="doc-slide">
                     <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
-                      <span>DOKUMENTASI PKM 02</span>
+                      <span>FOTO DOKUMENTASI 02-A</span>
                       <span>2023</span>
                     </div>
-                    <div style="margin: auto 0; padding: 1.25rem 0;">
+                    <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
                       <div style="width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
                         02
                       </div>
                       <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main);">
-                        Dokumentasi Workshop Web Server
+                        Instalasi Server &amp; Konfigurasi
                       </div>
-                      <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.35rem;">
-                        Sesi praktik konfigurasi dan pengelolaan hosting server menggunakan CentOS Web Panel.
+                      <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                        Praktik langsung pengelolaan Control Web Panel (CWP) di lab.
                       </div>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
                       <span>Laboratorium Komputer</span>
-                      <span style="font-family: monospace;">ARSIP_DOKUMENTASI</span>
+                      <span style="font-family: monospace;">ARSIP_PKM</span>
                     </div>
                   </div>
 
-                  <div class="community-info-group">
-                    <span class="project-tag" style="background-color: var(--bg-secondary); align-self: flex-start;">Workshop &bull; Server Admin</span>
-                    <h3 class="community-slide-title">
-                      Administrasi Web Server dengan CWP
-                    </h3>
-                    <p class="community-slide-desc">
-                      Kegiatan workshop teknis mengenai pengelolaan web server, konfigurasi domain, manajemen basis data, serta tata kelola keamanan panel server hosting berbasis Control Web Panel (CWP).
-                    </p>
-                    <div style="border-top: 1px solid var(--border-color); padding-top: 0.5rem; font-size: 0.78rem; color: var(--text-secondary);">
-                      Peran: <strong style="color: var(--accent);">Instruktur Praktik &amp; Pemateri Teknis</strong>
+                  <!-- Slide Foto 2 -->
+                  <div class="doc-slide">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
+                      <span>FOTO DOKUMENTASI 02-B</span>
+                      <span>2023</span>
+                    </div>
+                    <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
+                      <div style="width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
+                        02
+                      </div>
+                      <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main);">
+                        Manajemen Basis Data &amp; DNS
+                      </div>
+                      <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                        Konfigurasi domain dan keamanan hak akses server web.
+                      </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
+                      <span>Simulasi Jaringan</span>
+                      <span style="font-family: monospace;">ARSIP_PKM</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-prev" aria-label="Foto sebelumnya">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" aria-label="Foto berikutnya">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+                <div class="carousel-indicators"></div>
+              </div>
+
+              <!-- Slot Kanan: Informasi & Deskripsi Rata Kanan Kiri -->
+              <div class="community-content">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+                  <span class="project-tag" style="background-color: var(--bg-secondary);">KEGIATAN 02</span>
+                  <span style="color: var(--text-secondary); font-family: monospace;">2023</span>
+                  <span style="color: var(--text-secondary);">&bull;</span>
+                  <span style="color: var(--text-secondary);">Workshop Teknis Komputer</span>
+                </div>
+
+                <h3 class="community-title">
+                  Workshop: “Administrasi Web Server dengan CWP”
+                </h3>
+
+                <p class="community-desc">
+                  Workshop pelatihan teknis yang membekali peserta mengenai cara mengelola server hosting mandiri, konfigurasi name server dan domain, manajemen basis data MySQL, serta penerapan sertifikat SSL gratis untuk keamanan web.
+                </p>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+                    Peran: <span style="color: var(--accent); font-weight: 600;">Instruktur Praktik &amp; Pemateri Teknis</span>
+                  </div>
+                  <div class="contributions-list">
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Membimbing proses instalasi sistem operasi CentOS dan panel CWP pada mesin virtual peserta.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Memberikan panduan pemecahan masalah kendala konektivitas dan perizinan file server.</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </article>
 
-              <!-- Slide 3: Game Edukasi Brilian -->
-              <div class="carousel-slide">
-                <div class="community-slide-content">
-                  <div class="community-doc-frame">
+          <!-- Card PKM 3: Game Edukasi Berhitung "Brilian" -->
+          <article class="community-card">
+            <div class="community-grid">
+              <!-- Slot Kiri: Carousel Foto Dokumentasi -->
+              <div class="doc-carousel-box">
+                <div class="doc-carousel-track">
+                  <!-- Slide Foto 1 -->
+                  <div class="doc-slide">
                     <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
-                      <span>DOKUMENTASI PKM 03</span>
+                      <span>FOTO DOKUMENTASI 03-A</span>
                       <span>2023</span>
                     </div>
-                    <div style="margin: auto 0; padding: 1.25rem 0;">
+                    <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
                       <div style="width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
                         03
                       </div>
                       <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main);">
-                        Hilirisasi Riset Game Edukasi
+                        Uji Coba Game di Kelas
                       </div>
-                      <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.35rem;">
-                        Penerapan game berhitung interaktif bersama anak-anak tunagrahita ringan.
+                      <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                        Interaksi anak tunagrahita ringan bermain game berhitung Brilian.
                       </div>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
-                      <span>Pendidikan Luar Biasa</span>
-                      <span style="font-family: monospace;">ARSIP_DOKUMENTASI</span>
+                      <span>Sekolah Luar Biasa</span>
+                      <span style="font-family: monospace;">ARSIP_PKM</span>
                     </div>
                   </div>
 
-                  <div class="community-info-group">
-                    <span class="project-tag" style="background-color: var(--bg-secondary); align-self: flex-start;">Hilirisasi Riset &bull; Edukasi Inklusif</span>
-                    <h3 class="community-slide-title">
-                      Game Edukasi Berhitung “Brilian” untuk Anak Tunagrahita Ringan
-                    </h3>
-                    <p class="community-slide-desc">
-                      Penerapan media pembelajaran digital gamifikasi matematika dasar yang dirancang khusus untuk mempermudah anak tunagrahita ringan dalam memahami konsep angka dan berhitung secara menyenangkan.
-                    </p>
-                    <div style="border-top: 1px solid var(--border-color); padding-top: 0.5rem; font-size: 0.78rem; color: var(--text-secondary);">
-                      Peran: <strong style="color: var(--accent);">Kontributor Hilirisasi &amp; Pengujian Aplikasi</strong>
+                  <!-- Slide Foto 2 -->
+                  <div class="doc-slide">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
+                      <span>FOTO DOKUMENTASI 03-B</span>
+                      <span>2023</span>
+                    </div>
+                    <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
+                      <div style="width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
+                        03
+                      </div>
+                      <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main);">
+                        Evaluasi Bersama Guru Pendamping
+                      </div>
+                      <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                        Pengumpulan masukan kemudahan navigasi dan antarmuka ramah anak.
+                      </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
+                      <span>Hilirisasi Riset</span>
+                      <span style="font-family: monospace;">ARSIP_PKM</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-prev" aria-label="Foto sebelumnya">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" aria-label="Foto berikutnya">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+                <div class="carousel-indicators"></div>
+              </div>
+
+              <!-- Slot Kanan: Informasi & Deskripsi Rata Kanan Kiri -->
+              <div class="community-content">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+                  <span class="project-tag" style="background-color: var(--bg-secondary);">KEGIATAN 03</span>
+                  <span style="color: var(--text-secondary); font-family: monospace;">2023</span>
+                  <span style="color: var(--text-secondary);">&bull;</span>
+                  <span style="color: var(--text-secondary);">Hilirisasi Riset Inklusif</span>
+                </div>
+
+                <h3 class="community-title">
+                  Hilirisasi Riset Game Edukasi Berhitung “Brilian” untuk Anak Tunagrahita Ringan
+                </h3>
+
+                <p class="community-desc">
+                  Penerapan luaran riset teknologi berupa game edukasi interaktif yang dirancang khusus untuk memfasilitasi anak tunagrahita ringan dalam memahami konsep logika bilangan dan perhitungan dasar melalui media belajar visual yang ramah dan menyenangkan.
+                </p>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+                    Peran: <span style="color: var(--accent); font-weight: 600;">Kontributor Hilirisasi &amp; Pengujian Aplikasi</span>
+                  </div>
+                  <div class="contributions-list">
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Membantu persiapan instalasi game pada gawai tablet serta memfasilitasi sesi interaksi anak saat bermain.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Mencatat observasi kenyamanan penggunaan antarmuka dan respon anak sebagai bahan evaluasi riset lanjutan.</span>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
+          </article>
 
-            <!-- Tombol Navigasi Carousel -->
-            <button class="carousel-btn carousel-btn-prev" id="communityCarouselPrev" aria-label="Slide sebelumnya">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <button class="carousel-btn carousel-btn-next" id="communityCarouselNext" aria-label="Slide berikutnya">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-
-            <!-- Indikator Dots -->
-            <div class="carousel-indicators" id="communityCarouselIndicators"></div>
-          </div>
         </div>
 
       </div>
@@ -595,7 +751,7 @@
               <h3 class="cert-name">
                 Pengembang Aplikasi Android Native Profesional
               </h3>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.65;">
                 Kompetensi rekayasa aplikasi Android menggunakan Kotlin, MVVM, dan Coroutines.
               </p>
             </div>
@@ -637,7 +793,7 @@
               <h3 class="cert-name">
                 Spesialisasi Computer Vision dan Deteksi Objek
               </h3>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.65;">
                 Pelatihan computer vision YOLOv8 dan ekspor model edge TensorFlow Lite.
               </p>
             </div>
@@ -679,7 +835,7 @@
               <h3 class="cert-name">
                 Full-Stack Web Application Engineering
               </h3>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.65;">
                 Perancangan arsitektur backend MVC, skema MySQL, dan keamanan sistem web.
               </p>
             </div>
@@ -721,7 +877,7 @@
               <h3 class="cert-name">
                 Perancangan Pengalaman Pengguna (UI/UX Design)
               </h3>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.65;">
                 Prinsip riset pengguna, wireframing Figma, Design System, dan validasi heuristik.
               </p>
             </div>
@@ -763,7 +919,7 @@
               <h3 class="cert-name">
                 Fundamental Pemodelan 3D dan Tekstur PBR
               </h3>
-              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.65;">
                 Pemodelan hard-surface, unwrapping UV, teksturisasi PBR, dan optimasi mesh 3D.
               </p>
             </div>
@@ -794,7 +950,7 @@
             <h2 class="section-title" style="margin: 0 auto 0.75rem;">
               Mari Terhubung &amp; Berkolaborasi
             </h2>
-            <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 32rem; margin: 0 auto; line-height: 1.65;">
+            <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 32rem; margin: 0 auto; line-height: 1.7; text-align: justify; text-justify: inter-word;">
               Terbuka untuk kesempatan kerja, proyek kolaboratif, maupun diskusi seputar pengembangan teknologi digital dan UI/UX design.
             </p>
           </div>
@@ -898,7 +1054,7 @@
           <h2 id="modalProjectTitle" style="font-family: var(--font-serif); font-size: 1.45rem; font-weight: 500; color: var(--text-main); line-height: 1.3;">
             Judul Proyek Lengkap
           </h2>
-          <p id="modalProjectSummary" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.6;">
+          <p id="modalProjectSummary" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.65; text-align: justify; text-justify: inter-word;">
             Deskripsi ringkas proyek.
           </p>
         </div>
@@ -941,7 +1097,7 @@
             <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem;">
               Tantangan Rekayasa
             </div>
-            <p id="modalProjectChallenge" style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.55;">
+            <p id="modalProjectChallenge" style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; text-align: justify; text-justify: inter-word;">
               Tantangan teknis...
             </p>
           </div>
@@ -950,7 +1106,7 @@
             <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem;">
               Solusi &amp; Pendekatan Teknis
             </div>
-            <p id="modalProjectSolution" style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.55;">
+            <p id="modalProjectSolution" style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; text-align: justify; text-justify: inter-word;">
               Solusi yang diterapkan...
             </p>
           </div>
@@ -1006,7 +1162,7 @@
             <h3 id="certModalName" style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--text-main); margin-top: 0.5rem;">
               Nama Sertifikat
             </h3>
-            <p id="certModalDesc" style="font-size: 0.82rem; color: var(--text-secondary); max-width: 32rem; margin: 0.65rem auto 0; line-height: 1.6;">
+            <p id="certModalDesc" style="font-size: 0.82rem; color: var(--text-secondary); max-width: 32rem; margin: 0.65rem auto 0; line-height: 1.65; text-align: justify; text-justify: inter-word;">
               Deskripsi kredensial sertifikat.
             </p>
           </div>
