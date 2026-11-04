@@ -189,7 +189,7 @@ const PROJECTS_DATA = {
   'nusareka': {
     number: '03',
     category: 'Full-Stack Web Development',
-    year: '2023 - 2024',
+    year: '2025',
     context: 'PT. Nusareka Prima Engineering',
     title: 'Rancang Bangun Sistem Manajemen Internal PT. Nusareka Prima Engineering',
     summary: 'Sistem berbasis web yang dikembangkan untuk mengintegrasikan informasi dan proses administrasi internal dari berbagai divisi perusahaan ke dalam satu platform terpusat.',
