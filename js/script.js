@@ -1,15 +1,15 @@
 /**
- * Website Portofolio Pribadi — Konsep Warm Editorial
+ * Website Portofolio Pribadi — Nasywa Rizka Winanda
  * Pure Vanilla JavaScript (Tanpa Framework)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initSectionSpy();
-  initProjectModal();
+  initProjectModalWithCarousel();
+  initCommunityCarousel();
   initCertificateModal();
   initEmailCopy();
-  initContactForm();
 });
 
 /* -------------------------------------------------------------------------
@@ -112,30 +112,41 @@ function initSectionSpy() {
 }
 
 /* -------------------------------------------------------------------------
-   3. Modal Pratinjau Detail Proyek (5 Proyek)
+   3. Modal Pop-up Proyek dengan Carousel Otomatis Gambar Web
    ------------------------------------------------------------------------- */
 const PROJECTS_DATA = {
   'siak': {
     number: '01',
     category: 'Pemodelan 3D / Virtual Reality',
     year: '2024',
-    context: 'Proyek Rekayasa Spasial & Pelestarian Warisan Budaya',
+    context: 'Proyek Akhir & Pelestarian Warisan Budaya',
     title: 'Pembuatan Model 3D Detil Bangunan Istana Siak untuk Lingkungan Virtual Immersive',
-    summary: 'Proyek pengembangan lingkungan virtual imersif yang menghadirkan model 3D bangunan bersejarah Istana Siak beserta elemen arsitektur khas Melayu dan interior aslinya secara mendetail.',
+    summary: 'Proyek pengembangan lingkungan virtual imersif yang menghadirkan model 3D bangunan bersejarah Istana Siak beserta elemen arsitektur interior dan eksterior aslinya secara mendetail.',
     role: '3D Environmental Artist & VR Integrator',
-    tech: ['Blender', 'Adobe Substance 3D Painter', 'Unity', 'Meta Quest', 'C#', 'PBR Workflow'],
-    challenge: 'Bangunan Istana Siak memiliki ornamen arsitektur Melayu-Eropa yang rumit pada pilar, kubah, dan ukiran interior. Menjaga fidelitas ornamen tanpa membebani performa perangkat headset Meta Quest mandiri menjadi tantangan kritis.',
-    solution: 'Menerapkan teknik high-to-low poly baking di Blender, teksturisasi PBR 2K di Substance 3D Painter, serta optimasi baked lighting dan light probes di Unity agar framerate stabil di 72 FPS.',
+    tech: ['Blender', 'Adobe Substance 3D', 'Unity', 'Meta Quest', 'C#'],
+    challenge: 'Menjaga fidelitas ornamen arsitektur Melayu-Eropa Istana Siak tanpa membebani performa headset Meta Quest mandiri.',
+    solution: 'Menerapkan high-to-low poly baking di Blender, teksturisasi PBR 2K di Substance 3D Painter, serta optimasi lighting di Unity.',
     highlights: [
-      'Pemodelan arsitektur 3D eksterior dan interior dengan ketepatan proporsi tinggi.',
+      'Pemodelan arsitektur 3D eksterior dan interior dengan presisi proporsi tinggi.',
       'Teksturisasi Physically Based Rendering (PBR) menggunakan Adobe Substance 3D Painter.',
-      'Integrasi interaktif ke dalam Unity Engine dan pengujian langsung pada Meta Quest.',
-      'Fitur navigasi teleportasi dan eksplorasi artefak sejarah secara interaktif.'
+      'Integrasi interaktif ke dalam Unity Engine dan pengujian langsung pada Meta Quest.'
     ],
-    deliverables: [
-      'Model 3D arsitektur utuh Istana Siak (Lantai 1, Lantai 2, Tangga Khas, Fasad Depan).',
-      'Set peta tekstur resolusi tinggi (Albedo, Normal, Roughness, Metallic, AO).',
-      'Build aplikasi simulasi Virtual Reality fungsional untuk Meta Quest.'
+    slides: [
+      {
+        title: 'Tampilan Arsitektur Fasad Depan Istana Siak',
+        caption: 'Model 3D arsitektur eksterior dengan proporsi akurat dan pilar khas Melayu-Eropa.',
+        type: 'siak-front'
+      },
+      {
+        title: 'Tampilan Interior & Tangga Khas',
+        caption: 'Pemodelan ornamen lantai dua, railing tangga, dan ukiran interior bersejarah.',
+        type: 'siak-interior'
+      },
+      {
+        title: 'Pengujian Lingkungan VR Meta Quest',
+        caption: 'Simulasi interaktif 6DoF dan navigasi teleportasi dengan framerate stabil 72 FPS.',
+        type: 'siak-vr'
+      }
     ]
   },
   'sijagat': {
@@ -146,19 +157,30 @@ const PROJECTS_DATA = {
     title: 'SIJAGAT: Aplikasi Deteksi Api dan Asap Berbasis Mobile Menggunakan Deep Learning',
     summary: 'Aplikasi Android yang dirancang untuk mendeteksi keberadaan api dan asap secara real-time langsung melalui feed kamera ponsel menggunakan model computer vision YOLOv8 yang telah dioptimasi.',
     role: 'Android Developer & Deep Learning Engineer',
-    tech: ['Kotlin', 'Android Studio', 'CameraX', 'YOLOv8', 'PyTorch', 'TensorFlow Lite'],
-    challenge: 'Kondisi asap dan api memiliki variasi bentuk dinamis serta pencahayaan kontras di lapangan terbuka. Model harus berjalan mulus pada ponsel Android dengan konsumsi baterai dan latensi inferensi serendah mungkin.',
-    solution: 'Dataset dikurasi dengan augmentasi kondisi pencahayaan dan intensitas asap berbeda. Model YOLOv8n (nano) dikonversi dan dikuantisasi ke TensorFlow Lite INT8 (13.8 MB). Pipeline CameraX diproses pada thread pool terpisah dari thread UI.',
+    tech: ['Kotlin', 'Android Studio', 'CameraX', 'YOLOv8', 'TensorFlow Lite'],
+    challenge: 'Kondisi asap dan api memiliki variasi bentuk dinamis serta pencahayaan kontras di lapangan terbuka.',
+    solution: 'Model YOLOv8n dilatih dan dikuantisasi ke TensorFlow Lite INT8 (13.8 MB) dengan CameraX threading terpisah.',
     highlights: [
       'Object Detection menggunakan YOLOv8 dengan dataset citra api dan asap lokal.',
       'Konversi model PyTorch ke format TensorFlow Lite 8-bit terkuantisasi.',
-      'Pengembangan aplikasi native Android menggunakan Kotlin dan CameraX API.',
-      'Deteksi inferensi secara real-time via kamera serta dukungan input foto galeri dan berkas video.'
+      'Inferensi kamera real-time dan fitur pengujian berkas gambar/video.'
     ],
-    deliverables: [
-      'Model YOLOv8 teroptimasi berukuran di bawah 15 MB dengan akurasi mAP tinggi.',
-      'Aplikasi native Android (.apk) fungsional dengan antarmuka viewfinder deteksi.',
-      'Modul riwayat tangkapan deteksi dilengkapi koordinat waktu dan label tingkat kepercayaan.'
+    slides: [
+      {
+        title: 'Tampilan Viewfinder Kamera Deteksi Real-Time',
+        caption: 'Deteksi bounding box otomatis dengan tingkat kepercayaan api 94.6% dan latensi 18ms.',
+        type: 'sijagat-cam'
+      },
+      {
+        title: 'Antarmuka Pengujian Gambar & Video',
+        caption: 'Pengguna dapat menguji file rekaman lokal dan melihat visualisasi bounding box.',
+        type: 'sijagat-input'
+      },
+      {
+        title: 'Dashboard Riwayat Log Deteksi',
+        caption: 'Pencatatan waktu kejadian, koordinat visual, dan tingkat keyakinan model.',
+        type: 'sijagat-history'
+      }
     ]
   },
   'nusareka': {
@@ -168,44 +190,65 @@ const PROJECTS_DATA = {
     context: 'PT. Nusareka Prima Engineering',
     title: 'Rancang Bangun Sistem Manajemen Internal PT. Nusareka Prima Engineering',
     summary: 'Sistem berbasis web yang dikembangkan untuk mengintegrasikan informasi dan proses administrasi internal dari berbagai divisi perusahaan ke dalam satu platform terpusat.',
-    role: 'Full-Stack Web Developer',
-    tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'JavaScript', 'Blade Engine'],
-    challenge: 'Sebelumnya divisi HR, Safety K3, dan Operasional menggunakan spreadsheet terpisah yang rawan duplikasi data, memperlambat verifikasi slip gaji, dan menyulitkan pelacakan audit keselamatan kerja di lapangan.',
-    solution: 'Membangun arsitektur basis data relasional terpusat di MySQL dengan relasi referensial ketat, menerapkan Role-Based Access Control (RBAC) di Laravel, dan mengotomasi kalkulasi jam lembur serta penerbitan slip gaji digital berenkripsi.',
+    role: 'Full-Stack Web Developer (Magang)',
+    tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
+    challenge: 'Mengintegrasikan data HR, Safety K3, dan slip gaji yang sebelumnya tercecer di spreadsheet terpisah.',
+    solution: 'Merancang basis data relasional MySQL terpusat dengan Role-Based Access Control (RBAC) di Laravel.',
     highlights: [
-      'Pengelolaan informasi internal dan operasional perusahaan secara terintegrasi.',
-      'Fitur manajemen Human Resource: data karyawan, kontrak, dan generate slip gaji otomatis.',
+      'Fitur manajemen Human Resource: data karyawan, kontrak, dan slip gaji otomatis.',
       'Fitur manajemen Safety: logbook kepatuhan K3 dan pelaporan inspeksi lapangan.',
-      'Autentikasi aman dengan kontrol hak akses berbasis peran berjenjang.',
-      'Pencatatan absensi digital dan pelaporan administrasi terpusat.'
+      'Pencatatan absensi digital dan penerbitan slip gaji PDF terenkripsi.'
     ],
-    deliverables: [
-      'Aplikasi web internal perusahaan fungsional siap pakai.',
-      'Modul penerbitan dan unduh slip gaji format PDF berenkripsi.',
-      'Dashboard analitik kehadiran karyawan dan status audit kepatuhan K3.'
+    slides: [
+      {
+        title: 'Dashboard Utama Sistem Manajemen Internal',
+        caption: 'Ikhtisar analitik kehadiran pegawai harian dan status kepatuhan keselamatan kerja K3.',
+        type: 'nusareka-dash'
+      },
+      {
+        title: 'Modul Manajemen Karyawan & Slip Gaji',
+        caption: 'Pencatatan otomatis jam lembur, potongan pajak, dan penerbitan slip gaji digital PDF.',
+        type: 'nusareka-payroll'
+      },
+      {
+        title: 'Modul Pengawasan Safety & Absensi',
+        caption: 'Sistem logbook K3 dan pencatatan presensi digital karyawan proyek.',
+        type: 'nusareka-safety'
+      }
     ]
   },
   'dzapin': {
     number: '04',
     category: 'Desain UI/UX',
     year: '2023',
-    context: 'Rekomendasi Desain Produk — PT. Bank Riau Kepri Syariah',
+    context: 'Rekomendasi Desain — PT. Bank Riau Kepri Syariah',
     title: 'Perancangan UI/UX Aplikasi dan Website Dzapin Merchant (QRIS Merchant) PT. Bank Riau Kepri Syariah',
-    summary: 'Proyek perancangan ulang antarmuka aplikasi mobile dan perancangan UI/UX website baru untuk layanan transaksi pedagang QRIS Merchant.',
-    role: 'UI/UX Designer (Design Proposal & Prototyping)',
-    tech: ['Figma', 'Design Systems', 'Interactive Prototyping', 'User Flow', 'Heuristic Evaluation'],
-    challenge: 'Aplikasi merchant versi awal memiliki hierarki informasi yang padat, navigasi laporan mutasi yang bertingkat banyak, dan kurang memberikan kejelasan status audio/visual saat kasir menerima pembayaran di jam sibuk toko.',
-    solution: 'Menyederhanakan alur navigasi menjadi 3 prioritas: Penerimaan QRIS Cepat, Ringkasan Penjualan Hari Ini, dan Mutasi Transaksi. Membangun Design System terstandar dan kartu transaksi kontras tinggi.',
+    summary: 'Proyek perancangan ulang antarmuka aplikasi mobile dan perancangan UI/UX website baru untuk layanan transaksi pedagang QRIS Merchant perbankan syariah.',
+    role: 'UI/UX Designer (Magang)',
+    tech: ['Figma', 'Design Systems', 'Interactive Prototyping', 'User Flow'],
+    challenge: 'Menyederhanakan alur transaksi agar kasir dan pemilik usaha UMKM dapat memantau mutasi secara cepat.',
+    solution: 'Menyusun alur 3 prioritas (QRIS Cepat, Omzet Hari Ini, Mutasi) dengan kartu visual kontras tinggi.',
     highlights: [
-      'Redesign antarmuka aplikasi mobile agar ramah bagi merchant UMKM pemula.',
-      'Perancangan UI/UX website dashboard baru untuk pemantauan merchant volume tinggi.',
-      'Visualisasi monitoring transaksi, laporan keuangan, dan riwayat mutasi yang mudah dipahami.',
-      'Penyusunan komponen Design System yang konsisten berpedoman pada identitas bank syariah.'
+      'Redesign antarmuka mobile agar ramah bagi merchant UMKM pemula.',
+      'Perancangan UI/UX website dashboard analitik pedagang.',
+      'Penyusunan Design System terstandar berpedoman pada identitas bank syariah.'
     ],
-    deliverables: [
-      'File Figma komprehensif mencakup 35+ artboard mobile dan 12+ halaman dashboard web.',
-      'Komponen Design System (Skala tipografi, token warna, tombol, tabel data).',
-      'Prototipe interaktif clickable untuk pengujian alur penerimaan transaksi QRIS.'
+    slides: [
+      {
+        title: 'Tampilan Utama Aplikasi Mobile Merchant',
+        caption: 'Alur penerimaan QRIS cepat, ringkasan omzet harian, dan notifikasi suara transaksi.',
+        type: 'dzapin-mobile'
+      },
+      {
+        title: 'Dashboard Web Portal Analitik Transaksi',
+        caption: 'Grafik riwayat transaksi mingguan dan filter mutasi rekening toko.',
+        type: 'dzapin-web'
+      },
+      {
+        title: 'Komponen Design System Terstandar',
+        caption: 'Skala tipografi, palet warna perbankan, variasi tombol aksi, dan tabel data terstruktur.',
+        type: 'dzapin-system'
+      }
     ]
   },
   'futsalgo': {
@@ -216,30 +259,148 @@ const PROJECTS_DATA = {
     title: 'FUTSAL-GO: Platform Pencarian dan Pemesanan Lapangan Futsal Berbasis GIS',
     summary: 'Aplikasi berbasis web dengan Geographic Information System (GIS) yang membantu pengguna menemukan lokasi lapangan futsal di sekitar Pekanbaru berdasarkan radius dan ketersediaan jadwal.',
     role: 'Full-Stack Web & GIS Developer',
-    tech: ['PHP', 'JavaScript', 'Leaflet.js', 'OpenStreetMap', 'MySQL', 'CSS3'],
-    challenge: 'Komunitas futsal di Pekanbaru kerap kesulitan mencari lapangan kosong pada akhir pekan karena harus menelepon pengelola satu per satu tanpa mengetahui lokasi pasti dan kelayakan fasilitas lapangan.',
-    solution: 'Mengintegrasikan peta interaktif Leaflet.js dengan query spasial radius terdekat, menampilkan pin kustom dengan detail fasilitas, dan menyediakan kalender reservasi waktu langsung.',
+    tech: ['PHP', 'JavaScript', 'Leaflet.js', 'OpenStreetMap', 'MySQL'],
+    challenge: 'Menghubungkan data lokasi spasial lapangan futsal dengan sistem reservasi waktu realtime.',
+    solution: 'Mengintegrasikan peta interaktif Leaflet.js dengan query radius jarak terdekat dan kalender sewa.',
     highlights: [
-      'Geographic Information System dengan pemetaan titik lapangan futsal di Pekanbaru.',
-      'Fitur pencarian lokasi berbasis radius jarak terdekat dari pengguna.',
-      'Katalog informasi detail fasilitas (lantai rumput/vinyl, penerangan, shower, parkir).',
-      'Fitur alur pemesanan jadwal lapangan interaktif.'
+      'Pemetaan titik koordinat lapangan futsal di Pekanbaru ke dalam peta digital interaktif.',
+      'Pencarian lokasi berbasis radius jarak terdekat dari pengguna.',
+      'Detail fasilitas lapangan dan sistem pemesanan jadwal langsung.'
     ],
-    deliverables: [
-      'Aplikasi web GIS dengan integrasi peta responsif kota Pekanbaru.',
-      'Basis data spasial titik koordinat dan katalog fasilitas lapangan.',
-      'Modul reservasi slot waktu dan konfirmasi pemesanan pengguna.'
+    slides: [
+      {
+        title: 'Tampilan Peta Spasial Interaktif Pekanbaru',
+        caption: 'Penanda titik lokasi lapangan futsal dengan filter radius jarak dan jenis lantai.',
+        type: 'futsal-map'
+      },
+      {
+        title: 'Halaman Detail Fasilitas & Ulasan',
+        caption: 'Informasi kelayakan rumput sintetis/vinyl, penerangan lampu, dan ketersediaan shower.',
+        type: 'futsal-detail'
+      },
+      {
+        title: 'Alur Pemesanan Jadwal Realtime',
+        caption: 'Pemilihan slot waktu sewa lapangan dan konfirmasi tanda jadi digital.',
+        type: 'futsal-booking'
+      }
     ]
   }
 };
 
-function initProjectModal() {
+let projectCarouselInterval = null;
+let currentProjectSlideIndex = 0;
+
+function generateSlideGraphic(type) {
+  // Menghasilkan grafik simulasi antarmuka web yang bersih dan elegan
+  return `
+    <div style="background-color: #252422; border-radius: 0.5rem; padding: 1.25rem; color: #FAF8F5; min-height: 14rem; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace; border: 1px solid #3D3A33;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #3D3A33; padding-bottom: 0.4rem; font-size: 0.7rem; color: #A8A49A;">
+        <span style="display: flex; items-center; gap: 0.35rem;">
+          <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #8C7965;"></span>
+          PREVIEW_WEB_INTERFACE
+        </span>
+        <span>100% RESPONSIVE</span>
+      </div>
+      
+      <div style="margin: auto 0; text-align: center; padding: 1rem 0;">
+        <div style="font-family: var(--font-serif); font-size: 1.15rem; color: #E7E4DC; margin-bottom: 0.35rem;">
+          Tampilan Antarmuka Terverifikasi
+        </div>
+        <div style="font-size: 0.75rem; color: #A8A49A; max-width: 20rem; margin: 0 auto; line-height: 1.5;">
+          Cuplikan visual sistem dan alur kerja yang dibangun secara fungsional.
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; border-top: 1px solid #3D3A33; padding-top: 0.4rem; font-size: 0.68rem; color: #8E8B83;">
+        <span>MODUL DIGITAL</span>
+        <span style="color: #8C7965;">ARSIP DOKUMEN PROYEK</span>
+      </div>
+    </div>
+  `;
+}
+
+function initProjectModalWithCarousel() {
   const modal = document.getElementById('projectModal');
   const closeBtn = document.getElementById('closeProjectModal');
   const modalCloseFooter = document.getElementById('modalCloseFooter');
-  const detailButtons = document.querySelectorAll('[data-project-id]');
+  const projectCards = document.querySelectorAll('[data-project-id]');
+
+  const track = document.getElementById('projectCarouselTrack');
+  const prevBtn = document.getElementById('projectCarouselPrev');
+  const nextBtn = document.getElementById('projectCarouselNext');
+  const indicatorsContainer = document.getElementById('projectCarouselIndicators');
+  const captionEl = document.getElementById('projectCarouselCaption');
 
   if (!modal) return;
+
+  function renderCarousel(slides) {
+    clearInterval(projectCarouselInterval);
+    currentProjectSlideIndex = 0;
+
+    track.innerHTML = '';
+    indicatorsContainer.innerHTML = '';
+
+    slides.forEach((slide, idx) => {
+      // Slide element
+      const slideDiv = document.createElement('div');
+      slideDiv.className = 'carousel-slide';
+      slideDiv.style.padding = '0.5rem';
+      slideDiv.innerHTML = `
+        <div style="border-radius: 0.5rem; overflow: hidden; border: 1px solid var(--border-color);">
+          ${generateSlideGraphic(slide.type)}
+        </div>
+        <div style="padding: 0.65rem 0.25rem 0.25rem;">
+          <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 600; color: var(--text-main);">
+            ${slide.title}
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem;">
+            ${slide.caption}
+          </div>
+        </div>
+      `;
+      track.appendChild(slideDiv);
+
+      // Indicator dot
+      const dot = document.createElement('div');
+      dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(idx));
+      indicatorsContainer.appendChild(dot);
+    });
+
+    goToSlide(0);
+    startCarouselAutoPlay(slides.length);
+  }
+
+  function goToSlide(index) {
+    currentProjectSlideIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    const dots = indicatorsContainer.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function nextSlide(total) {
+    const nextIdx = (currentProjectSlideIndex + 1) % total;
+    goToSlide(nextIdx);
+  }
+
+  function prevSlide(total) {
+    const prevIdx = (currentProjectSlideIndex - 1 + total) % total;
+    goToSlide(prevIdx);
+  }
+
+  function startCarouselAutoPlay(total) {
+    clearInterval(projectCarouselInterval);
+    projectCarouselInterval = setInterval(() => {
+      nextSlide(total);
+    }, 3500); // Otomatis berputar tiap 3.5 detik
+  }
 
   function openProject(projectId) {
     const data = PROJECTS_DATA[projectId];
@@ -276,30 +437,38 @@ function initProjectModal() {
       highlightsContainer.appendChild(li);
     });
 
-    // Deliverables
-    const deliverablesContainer = document.getElementById('modalProjectDeliverables');
-    deliverablesContainer.innerHTML = '';
-    data.deliverables.forEach(d => {
-      const li = document.createElement('li');
-      li.style.lineHeight = '1.6';
-      li.style.marginBottom = '0.35rem';
-      li.textContent = d;
-      deliverablesContainer.appendChild(li);
-    });
+    // Setup & render carousel
+    renderCarousel(data.slides);
+
+    // Prev / Next button listeners
+    prevBtn.onclick = () => {
+      prevSlide(data.slides.length);
+      startCarouselAutoPlay(data.slides.length);
+    };
+    nextBtn.onclick = () => {
+      nextSlide(data.slides.length);
+      startCarouselAutoPlay(data.slides.length);
+    };
+
+    // Pause on hover
+    const carouselBox = document.getElementById('projectCarouselBox');
+    carouselBox.onmouseenter = () => clearInterval(projectCarouselInterval);
+    carouselBox.onmouseleave = () => startCarouselAutoPlay(data.slides.length);
 
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
+    clearInterval(projectCarouselInterval);
     modal.classList.remove('open');
     document.body.style.overflow = '';
   }
 
-  detailButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  projectCards.forEach(card => {
+    card.addEventListener('click', (e) => {
       e.preventDefault();
-      const id = btn.getAttribute('data-project-id');
+      const id = card.getAttribute('data-project-id');
       openProject(id);
     });
   });
@@ -319,14 +488,94 @@ function initProjectModal() {
 }
 
 /* -------------------------------------------------------------------------
-   4. Modal Lightbox Zoom Sertifikat
+   4. Carousel Otomatis Dokumentasi Pengabdian kepada Masyarakat
+   ------------------------------------------------------------------------- */
+let communityCarouselInterval = null;
+let currentCommunityIndex = 0;
+
+function initCommunityCarousel() {
+  const track = document.getElementById('communityCarouselTrack');
+  const prevBtn = document.getElementById('communityCarouselPrev');
+  const nextBtn = document.getElementById('communityCarouselNext');
+  const indicatorsContainer = document.getElementById('communityCarouselIndicators');
+  const wrapper = document.getElementById('communityCarouselWrapper');
+
+  if (!track || !indicatorsContainer) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total = slides.length;
+  if (total === 0) return;
+
+  // Build dots
+  indicatorsContainer.innerHTML = '';
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('div');
+    dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+    dot.addEventListener('click', () => goToCommunitySlide(idx));
+    indicatorsContainer.appendChild(dot);
+  });
+
+  function goToCommunitySlide(index) {
+    currentCommunityIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    const dots = indicatorsContainer.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function nextCommunitySlide() {
+    const nextIdx = (currentCommunityIndex + 1) % total;
+    goToCommunitySlide(nextIdx);
+  }
+
+  function prevCommunitySlide() {
+    const prevIdx = (currentCommunityIndex - 1 + total) % total;
+    goToCommunitySlide(prevIdx);
+  }
+
+  function startCommunityAutoPlay() {
+    clearInterval(communityCarouselInterval);
+    communityCarouselInterval = setInterval(() => {
+      nextCommunitySlide();
+    }, 4000); // Berputar otomatis tiap 4 detik
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevCommunitySlide();
+      startCommunityAutoPlay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextCommunitySlide();
+      startCommunityAutoPlay();
+    });
+  }
+
+  if (wrapper) {
+    wrapper.addEventListener('mouseenter', () => clearInterval(communityCarouselInterval));
+    wrapper.addEventListener('mouseleave', () => startCommunityAutoPlay());
+  }
+
+  startCommunityAutoPlay();
+}
+
+/* -------------------------------------------------------------------------
+   5. Modal Lightbox Zoom Sertifikat
    ------------------------------------------------------------------------- */
 function initCertificateModal() {
   const certModal = document.getElementById('certModal');
   const closeCertBtn = document.getElementById('closeCertModal');
   const finishCertBtn = document.getElementById('finishCertModal');
   const certCards = document.querySelectorAll('.cert-card');
-  const filterBtns = document.querySelectorAll('.filter-btn');
 
   if (!certModal) return;
 
@@ -334,11 +583,9 @@ function initCertificateModal() {
     const name = card.getAttribute('data-cert-name');
     const issuer = card.getAttribute('data-cert-issuer');
     const year = card.getAttribute('data-cert-year');
-    const category = card.getAttribute('data-cert-category');
     const credId = card.getAttribute('data-cert-id');
     const desc = card.getAttribute('data-cert-desc');
 
-    document.getElementById('certModalCategory').textContent = category;
     document.getElementById('certModalYear').textContent = year;
     document.getElementById('certModalIssuer').textContent = issuer;
     document.getElementById('certModalName').textContent = name;
@@ -371,28 +618,10 @@ function initCertificateModal() {
       closeCert();
     }
   });
-
-  // Filter functionality
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filterVal = btn.getAttribute('data-filter');
-      certCards.forEach(card => {
-        const cat = card.getAttribute('data-cert-category');
-        if (filterVal === 'all' || cat === filterVal) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
 }
 
 /* -------------------------------------------------------------------------
-   5. Salin Alamat Email
+   6. Salin Alamat Email
    ------------------------------------------------------------------------- */
 function initEmailCopy() {
   const copyBtn = document.getElementById('copyEmailBtn');
@@ -400,11 +629,12 @@ function initEmailCopy() {
 
   if (!copyBtn || !emailText) return;
 
-  copyBtn.addEventListener('click', () => {
+  copyBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     const email = emailText.textContent.trim();
     navigator.clipboard.writeText(email).then(() => {
       const originalHTML = copyBtn.innerHTML;
-      copyBtn.innerHTML = '<span>Tersalin! &#10003;</span>';
+      copyBtn.innerHTML = '<span>Email Tersalin! &#10003;</span>';
       copyBtn.style.color = '#10b981';
 
       setTimeout(() => {
@@ -415,29 +645,4 @@ function initEmailCopy() {
       console.error('Gagal menyalin:', err);
     });
   });
-}
-
-/* -------------------------------------------------------------------------
-   6. Formulir Kontak Interaktif
-   ------------------------------------------------------------------------- */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const successBox = document.getElementById('contactSuccess');
-  const resetBtn = document.getElementById('resetContactForm');
-
-  if (!form || !successBox) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    form.style.display = 'none';
-    successBox.style.display = 'block';
-  });
-
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      form.reset();
-      form.style.display = 'block';
-      successBox.style.display = 'none';
-    });
-  }
 }
