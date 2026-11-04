@@ -133,16 +133,24 @@ const PROJECTS_DATA = {
     ],
     slides: [
       {
-        title: 'Tampilan Arsitektur Fasad Depan Istana Siak',
-        caption: 'Model 3D arsitektur eksterior dengan proporsi akurat dan pilar khas Melayu-Eropa.'
+        image: 'images/projects/siak/siak-exterior.jpg',
+        title: 'Model 3D Fasad Eksterior Istana Siak',
+        caption: 'Rekonstruksi digital tampak luar bangunan Istana Siak dengan proporsi arsitektur simetris dan pilar kubah khas Melayu-Eropa.'
       },
       {
-        title: 'Tampilan Interior & Tangga Khas',
-        caption: 'Pemodelan ornamen lantai dua, railing tangga, dan ukiran interior bersejarah.'
+        image: 'images/projects/siak/siak-interior-1.jpg',
+        title: 'Koridor Interior & Busur Lengkung Berornamen',
+        caption: 'Pemodelan lorong istana dengan detail lantai marmer, jendela berpola, dan panel dinding bermotif tradisional.'
       },
       {
-        title: 'Pengujian Lingkungan VR Meta Quest',
-        caption: 'Simulasi interaktif 6DoF dan navigasi teleportasi dengan framerate stabil 72 FPS.'
+        image: 'images/projects/siak/siak-interior-2.jpg',
+        title: 'Aula Utama & Detail Plafon Kotak (Coffered Ceiling)',
+        caption: 'Struktur ruang aula dengan pencahayaan ambient alami serta ornamen relief dinding klasik yang otentik.'
+      },
+      {
+        image: 'images/projects/siak/siak-interior-3.jpg',
+        title: 'Gerbang Lengkung Penghubung Antar Ruangan',
+        caption: 'Detail arsitektur lengkungan khas perpaduan Melayu dan Eropa yang imersif saat dieksplorasi di dalam lingkungan Virtual Reality.'
       }
     ]
   },
@@ -299,29 +307,48 @@ function initProjectModalWithCarousel() {
       const slideDiv = document.createElement('div');
       slideDiv.className = 'carousel-slide';
       slideDiv.style.padding = '0.5rem';
-      slideDiv.innerHTML = `
-        <div style="background-color: #252422; border-radius: 0.5rem; padding: 1.5rem; color: #FAF8F5; min-height: 13rem; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace; border: 1px solid #3D3A33;">
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #3D3A33; padding-bottom: 0.4rem; font-size: 0.7rem; color: #A8A49A;">
-            <span style="display: flex; align-items: center; gap: 0.35rem;">
-              <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #8C7965;"></span>
-              WEB_PREVIEW_INTERFACE
-            </span>
-            <span>100% RESPONSIVE</span>
-          </div>
-          <div style="text-align: center; margin: auto 0; padding: 1.25rem 0;">
-            <div style="font-family: var(--font-serif); font-size: 1.15rem; color: #E7E4DC; margin-bottom: 0.35rem;">
-              ${slide.title}
+
+      if (slide.image) {
+        slideDiv.innerHTML = `
+          <div style="background-color: var(--bg-card); border-radius: 0.65rem; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; box-shadow: var(--shadow-subtle);">
+            <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background-color: #1c1b18;">
+              <img src="${slide.image}" alt="${slide.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
-            <div style="font-size: 0.75rem; color: #A8A49A; max-width: 24rem; margin: 0 auto; line-height: 1.6; text-align: justify; text-justify: inter-word;">
-              ${slide.caption}
+            <div style="padding: 0.85rem 1.15rem; background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+              <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.25rem;">
+                ${slide.title}
+              </div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.55; text-align: justify; text-justify: inter-word;">
+                ${slide.caption}
+              </div>
             </div>
           </div>
-          <div style="display: flex; justify-content: space-between; border-top: 1px solid #3D3A33; padding-top: 0.4rem; font-size: 0.68rem; color: #8E8B83;">
-            <span>MODUL DIGITAL</span>
-            <span style="color: #8C7965;">DOKUMEN RESMI</span>
+        `;
+      } else {
+        slideDiv.innerHTML = `
+          <div style="background-color: #252422; border-radius: 0.5rem; padding: 1.5rem; color: #FAF8F5; min-height: 13rem; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace; border: 1px solid #3D3A33;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #3D3A33; padding-bottom: 0.4rem; font-size: 0.7rem; color: #A8A49A;">
+              <span style="display: flex; align-items: center; gap: 0.35rem;">
+                <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #8C7965;"></span>
+                WEB_PREVIEW_INTERFACE
+              </span>
+              <span>100% RESPONSIVE</span>
+            </div>
+            <div style="text-align: center; margin: auto 0; padding: 1.25rem 0;">
+              <div style="font-family: var(--font-serif); font-size: 1.15rem; color: #E7E4DC; margin-bottom: 0.35rem;">
+                ${slide.title}
+              </div>
+              <div style="font-size: 0.75rem; color: #A8A49A; max-width: 24rem; margin: 0 auto; line-height: 1.6; text-align: justify; text-justify: inter-word;">
+                ${slide.caption}
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-top: 1px solid #3D3A33; padding-top: 0.4rem; font-size: 0.68rem; color: #8E8B83;">
+              <span>MODUL DIGITAL</span>
+              <span style="color: #8C7965;">DOKUMEN RESMI</span>
+            </div>
           </div>
-        </div>
-      `;
+        `;
+      }
       track.appendChild(slideDiv);
 
       const dot = document.createElement('div');
