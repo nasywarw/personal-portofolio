@@ -122,14 +122,12 @@ const PROJECTS_DATA = {
     context: 'Proyek Akhir & Pelestarian Warisan Budaya',
     title: 'Pembuatan Model 3D Detil Bangunan Istana Siak untuk Lingkungan Virtual Immersive',
     summary: 'Proyek pengembangan lingkungan virtual imersif yang menghadirkan model 3D bangunan bersejarah Istana Siak beserta elemen arsitektur interior dan eksterior aslinya secara mendetail.',
-    role: '3D Environmental Artist & VR Integrator',
-    tech: ['Blender', 'Adobe Substance 3D', 'Unity', 'Meta Quest', 'C#'],
-    challenge: 'Menjaga fidelitas ornamen arsitektur Melayu-Eropa Istana Siak tanpa membebani performa headset Meta Quest mandiri.',
-    solution: 'Menerapkan high-to-low poly baking di Blender, teksturisasi PBR 2K di Substance 3D Painter, serta optimasi lighting di Unity.',
+    role: '3D modeling seluruh bangunan yang ada di dalam komplek Istana Siak serta arsitektur bagian dalam Istana Siak dan memerhatikan kompatibilitas model untuk diimport ke Unity (mengatur polycount dan face agar tidak berlebihan sehingga performa game lancar dan bebas lag).',
+    tech: ['3D Blender', 'Adobe Substance Painter', 'Unity'],
     highlights: [
-      'Pemodelan arsitektur 3D eksterior dan interior dengan presisi proporsi tinggi.',
-      'Teksturisasi Physically Based Rendering (PBR) menggunakan Adobe Substance 3D Painter.',
-      'Integrasi interaktif ke dalam Unity Engine dan pengujian langsung pada Meta Quest.'
+      'Pemodelan arsitektur 3D seluruh bangunan komplek istana dan detail interior dengan presisi proporsi tinggi.',
+      'Teksturisasi material realistis menggunakan Adobe Substance Painter.',
+      'Optimasi polycount mesh dan kompatibilitas aset 3D untuk integrasi lancar ke dalam Unity Engine.'
     ],
     slides: [
       {
@@ -306,7 +304,7 @@ function initProjectModalWithCarousel() {
     slides.forEach((slide, idx) => {
       const slideDiv = document.createElement('div');
       slideDiv.className = 'carousel-slide';
-      slideDiv.style.padding = '0.5rem';
+      slideDiv.style.padding = '0';
 
       if (slide.image) {
         slideDiv.innerHTML = `
@@ -403,8 +401,11 @@ function initProjectModalWithCarousel() {
     document.getElementById('modalProjectTitle').textContent = data.title;
     document.getElementById('modalProjectSummary').textContent = data.summary;
     document.getElementById('modalProjectRole').textContent = data.role;
-    document.getElementById('modalProjectChallenge').textContent = data.challenge;
-    document.getElementById('modalProjectSolution').textContent = data.solution;
+
+    const challengeEl = document.getElementById('modalProjectChallenge');
+    if (challengeEl) challengeEl.textContent = data.challenge || '';
+    const solutionEl = document.getElementById('modalProjectSolution');
+    if (solutionEl) solutionEl.textContent = data.solution || '';
 
     const techContainer = document.getElementById('modalProjectTech');
     techContainer.innerHTML = '';

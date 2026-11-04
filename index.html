@@ -228,10 +228,9 @@
                 interiornya.
               </p>
               <div class="project-card-skills">
-                <span class="skill-pill">Blender</span>
-                <span class="skill-pill">Substance 3D</span>
+                <span class="skill-pill">3D Blender</span>
+                <span class="skill-pill">Adobe Substance Painter</span>
                 <span class="skill-pill">Unity</span>
-                <span class="skill-pill">Meta Quest</span>
               </div>
             </div>
             <div class="project-card-footer">
@@ -1168,49 +1167,21 @@
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
-
-          <!-- Indikator Dots -->
-          <div class="carousel-indicators" id="projectCarouselIndicators"></div>
         </div>
+
+        <!-- Indikator Dots -->
+        <div class="carousel-indicators-bar" id="projectCarouselIndicators" style="display: flex; justify-content: center; gap: 0.4rem; margin-top: -0.25rem; margin-bottom: 0.25rem;"></div>
 
         <!-- Spesifikasi Peran & Tech -->
         <div
-          style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.85rem 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.78rem;">
+          style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.78rem;">
           <div>
-            <span style="color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Peran &amp; Tanggung
-              Jawab:</span>
-            <strong id="modalProjectRole" style="color: var(--text-main);">Role Name</strong>
+            <span style="color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Peran &amp; Tanggung Jawab:</span>
+            <div id="modalProjectRole" style="color: var(--text-main); line-height: 1.6; text-align: justify; text-justify: inter-word;">Role Name</div>
           </div>
           <div>
             <span style="color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">Teknologi Utama:</span>
             <div id="modalProjectTech" style="display: flex; flex-wrap: wrap; gap: 0.35rem;"></div>
-          </div>
-        </div>
-
-        <!-- Tantangan & Solusi Rekayasa -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div
-            style="border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.85rem 1rem; background-color: var(--bg-main);">
-            <div
-              style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem;">
-              Tantangan Rekayasa
-            </div>
-            <p id="modalProjectChallenge"
-              style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; text-align: justify; text-justify: inter-word;">
-              Tantangan teknis...
-            </p>
-          </div>
-
-          <div
-            style="border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.85rem 1rem; background-color: var(--bg-main);">
-            <div
-              style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem;">
-              Solusi &amp; Pendekatan Teknis
-            </div>
-            <p id="modalProjectSolution"
-              style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; text-align: justify; text-justify: inter-word;">
-              Solusi yang diterapkan...
-            </p>
           </div>
         </div>
 
