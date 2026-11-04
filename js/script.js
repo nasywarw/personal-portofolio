@@ -166,7 +166,7 @@ const PROJECTS_DATA = {
     tech: ['Kotlin', 'Android Studio', 'YOLOv8', 'TensorFlow Lite', 'CameraX', 'Computer Vision'],
     hideCarousel: true,
     actionUrl: 'https://www.figma.com/proto/TgvVfczuHk9em3aeIqN7mV/Porto?node-id=50-37&t=9zfyZqLH43w6ANTn-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=50%3A37',
-    actionLabel: 'Lihat Desain Prototipe di Figma',
+    actionLabel: 'Lihat Tampilan Aplikasi di Figma',
     actionIcon: 'figma',
     highlights: [
       'Konversi & Optimasi Model Edge: Mengonversi model PyTorch (.pt) asli menjadi format TensorFlow Lite (.tflite) yang terkuantisasi agar kompatibel, ringan, dan efisien saat dijalankan pada perangkat Android dengan sumber daya terbatas.',
@@ -184,7 +184,7 @@ const PROJECTS_DATA = {
     tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'Laravel Scheduler', 'Select2', 'SweetAlert'],
     hideCarousel: true,
     actionUrl: 'https://www.figma.com/proto/TgvVfczuHk9em3aeIqN7mV/Porto?node-id=37-111&t=9Jsnnvnay9OdoBeF-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=37%3A111',
-    actionLabel: 'Lihat Desain Prototipe di Figma',
+    actionLabel: 'Lihat Tampilan Website di Figma',
     actionIcon: 'figma',
     highlights: [
       'Modul Human Resource: Pengelolaan data karyawan, manajemen slip gaji, dan alokasi cuti staf, dilengkapi otomasi penghapusan data karyawan kontrak yang habis masa berlakunya menggunakan Laravel Scheduler.',
