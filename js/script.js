@@ -159,31 +159,19 @@ const PROJECTS_DATA = {
     number: '02',
     category: 'Pengembangan Android / Deep Learning',
     year: '2025',
-    context: 'Inovasi Mitigasi Kebakaran Hutan & Lahan',
-    title: 'SIJAGAT: Aplikasi Deteksi Api dan Asap Berbasis Mobile Menggunakan Deep Learning',
-    summary: 'Aplikasi Android yang dirancang untuk mendeteksi keberadaan api dan asap secara real-time langsung melalui feed kamera ponsel menggunakan model computer vision YOLOv8 yang telah dioptimasi.',
-    role: 'Android Developer & Deep Learning Engineer',
-    tech: ['Kotlin', 'Android Studio', 'CameraX', 'YOLOv8', 'TensorFlow Lite'],
-    challenge: 'Kondisi asap dan api memiliki variasi bentuk dinamis serta pencahayaan kontras di lapangan terbuka.',
-    solution: 'Model YOLOv8n dilatih dan dikuantisasi ke TensorFlow Lite INT8 (13.8 MB) dengan CameraX threading terpisah.',
+    context: 'Proyek Tugas Akhir — Mata Kuliah Deep Learning',
+    title: 'SIJAGAT: Aplikasi Deteksi Api dan Asap Berbasis Mobile Menggunakan YOLOv8',
+    summary: 'Dikembangkan sebagai proyek tim tugas akhir semester pada mata kuliah Deep Learning untuk membangun aplikasi mobile pendeteksi api dan asap menggunakan algoritma deteksi objek YOLOv8. Berperan sebagai Mobile Developer yang bertanggung jawab merancang dan mengembangkan aplikasi Android menggunakan Kotlin dan Android Studio, serta mengintegrasikan model deteksi yang telah dilatih ke dalam aplikasi gawai.',
+    role: 'Mobile Developer (Android & Model Integration)',
+    tech: ['Kotlin', 'Android Studio', 'YOLOv8', 'TensorFlow Lite', 'CameraX', 'Computer Vision'],
+    hideCarousel: true,
+    actionUrl: 'https://www.figma.com/proto/TgvVfczuHk9em3aeIqN7mV/Porto?node-id=50-37&t=9zfyZqLH43w6ANTn-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=50%3A37',
+    actionLabel: 'Lihat Desain Prototipe di Figma',
+    actionIcon: 'figma',
     highlights: [
-      'Object Detection menggunakan YOLOv8 dengan dataset citra api dan asap lokal.',
-      'Konversi model PyTorch ke format TensorFlow Lite 8-bit terkuantisasi.',
-      'Inferensi kamera real-time dan fitur pengujian berkas gambar/video.'
-    ],
-    slides: [
-      {
-        title: 'Tampilan Viewfinder Kamera Deteksi Real-Time',
-        caption: 'Deteksi bounding box otomatis dengan tingkat kepercayaan api 94.6% dan latensi 18ms.'
-      },
-      {
-        title: 'Antarmuka Pengujian Gambar & Video',
-        caption: 'Pengguna dapat menguji file rekaman lokal dan melihat visualisasi bounding box.'
-      },
-      {
-        title: 'Dashboard Riwayat Log Deteksi',
-        caption: 'Pencatatan waktu kejadian, koordinat visual, dan tingkat keyakinan model.'
-      }
+      'Konversi & Optimasi Model Edge: Mengonversi model PyTorch (.pt) asli menjadi format TensorFlow Lite (.tflite) yang terkuantisasi agar kompatibel, ringan, dan efisien saat dijalankan pada perangkat Android dengan sumber daya terbatas.',
+      'Deteksi Kamera Real-Time & Media Lokal: Mengintegrasikan model ke antarmuka aplikasi Android untuk mendeteksi api dan asap secara real-time melalui kamera belakang gawai, maupun melalui analisis impor berkas gambar dan video lokal.',
+      'Visualisasi Bounding Box Intuitif: Menampilkan kotak pembatas (bounding box) berwarna merah untuk mendeteksi api dan warna hijau untuk mendeteksi asap secara langsung pada layar gawai guna mempermudah pemahaman hasil deteksi pengguna.'
     ]
   },
   'nusareka': {
@@ -195,6 +183,7 @@ const PROJECTS_DATA = {
     summary: 'Dikembangkan sebagai bagian dari proyek magang di PT. Nusareka Prima Engineering untuk menggantikan pengelolaan informasi berbasis dokumen fisik menjadi sistem web internal terpusat. Berperan sebagai Full-Stack Developer yang bertanggung jawab membangun modul Human Resource dan Safety, serta menerapkan sistem autentikasi, kontrol akses berjenjang (RBAC), dan pengamanan seperti pencegahan navigasi kembali tanpa izin (unauthorized back navigation).',
     role: 'Full-Stack Web Developer (Magang)',
     tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'Laravel Scheduler', 'Select2', 'SweetAlert'],
+    hideCarousel: true,
     actionUrl: 'https://www.figma.com/proto/TgvVfczuHk9em3aeIqN7mV/Porto?node-id=37-111&t=9Jsnnvnay9OdoBeF-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=37%3A111',
     actionLabel: 'Lihat Desain Prototipe di Figma',
     actionIcon: 'figma',
@@ -202,21 +191,6 @@ const PROJECTS_DATA = {
       'Modul Human Resource: Pengelolaan data karyawan, manajemen slip gaji, dan alokasi cuti staf, dilengkapi otomasi penghapusan data karyawan kontrak yang habis masa berlakunya menggunakan Laravel Scheduler.',
       'Modul Safety: Pengelolaan laporan insiden keselamatan (safety reports), inspeksi keselamatan kerja, dan manajemen sertifikasi keahlian karyawan yang tetap terarsip aman meskipun data karyawan telah dinonaktifkan dari sistem.',
       'Implementasi Keamanan & UX: Penerapan sistem autentikasi, kontrol akses berjenjang (Role-Based Access Control), proteksi navigasi kembali tanpa otorisasi, serta integrasi pustaka pendukung seperti Select2 dan SweetAlert guna meningkatkan efisiensi alur kerja dan pengalaman pengguna.'
-    ],
-    slides: [
-      {
-        title: 'Halaman Pengenalan & Portal Perusahaan',
-        caption: 'Antarmuka profil dan sistem web internal PT. Nusareka Prima Engineering.',
-        image: 'images/projects/nusareka/nusareka-thumb.jpg'
-      },
-      {
-        title: 'Modul Human Resource & Otomasi Kontrak',
-        caption: 'Pengelolaan data pegawai, slip gaji, dan alokasi cuti dengan otomasi Laravel Scheduler.'
-      },
-      {
-        title: 'Modul Safety K3 & Pengarsipan Sertifikasi',
-        caption: 'Pencatatan laporan keselamatan, inspeksi lapangan, dan arsip sertifikasi staf terintegrasi.'
-      }
     ]
   },
   'dzapin': {
