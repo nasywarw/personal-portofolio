@@ -171,7 +171,6 @@ const PROJECTS_DATA = {
     highlights: [
       'Konversi & Optimasi Model Edge: Mengonversi model PyTorch (.pt) asli menjadi format TensorFlow Lite (.tflite) yang terkuantisasi agar kompatibel, ringan, dan efisien saat dijalankan pada perangkat Android dengan sumber daya terbatas.',
       'Deteksi Kamera Real-Time & Media Lokal: Mengintegrasikan model ke antarmuka aplikasi Android untuk mendeteksi api dan asap secara real-time melalui kamera belakang gawai, maupun melalui analisis impor berkas gambar dan video lokal.',
-      'Visualisasi Bounding Box Intuitif: Menampilkan kotak pembatas (bounding box) berwarna merah untuk mendeteksi api dan warna hijau untuk mendeteksi asap secara langsung pada layar gawai guna mempermudah pemahaman hasil deteksi pengguna.'
     ]
   },
   'nusareka': {
@@ -180,7 +179,7 @@ const PROJECTS_DATA = {
     year: '2025',
     context: 'PT. Nusareka Prima Engineering',
     title: 'Rancang Bangun Sistem Manajemen Internal PT. Nusareka Prima Engineering',
-    summary: 'Dikembangkan sebagai bagian dari proyek magang di PT. Nusareka Prima Engineering untuk menggantikan pengelolaan informasi berbasis dokumen fisik menjadi sistem web internal terpusat. Berperan sebagai Full-Stack Developer yang bertanggung jawab membangun modul Human Resource dan Safety, serta menerapkan sistem autentikasi, kontrol akses berjenjang (RBAC), dan pengamanan seperti pencegahan navigasi kembali tanpa izin (unauthorized back navigation).',
+    summary: 'Dikembangkan sebagai bagian dari proyek magang di PT. Nusareka Prima Engineering untuk menggantikan pengelolaan informasi berbasis dokumen fisik menjadi sistem web internal terpusat. Berperan sebagai Full-Stack Developer yang bertanggung jawab membangun modul Human Resource dan Safety.',
     role: 'Full-Stack Web Developer (Magang)',
     tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'Laravel Scheduler', 'Select2', 'SweetAlert'],
     hideCarousel: true,
