@@ -235,7 +235,7 @@
               </div>
             </div>
             <div class="project-card-footer">
-              <span>Pratinjau Proyek &amp; Download Game</span>
+              <span>Lihat Detail</span>
               <span>&rarr;</span>
             </div>
           </article>
@@ -256,7 +256,7 @@
               </div>
             </div>
             <div class="project-card-body">
-              <div class="project-card-tag">Android / Deep Learning &bull; 2024</div>
+              <div class="project-card-tag">Android / Deep Learning &bull; 2025</div>
               <h3 class="project-card-title">SIJAGAT: Deteksi Api &amp; Asap</h3>
               <p class="project-card-desc">
                 Aplikasi Android pendeteksi api dan asap secara real-time via kamera menggunakan deep learning YOLOv8.
@@ -313,7 +313,7 @@
             </div>
           </article>
 
-          <!-- Card 4: Dzapin Merchant -->
+          <!-- Card 4: Zapin Merchant -->
           <article class="project-card-simple" data-project-id="dzapin">
             <div class="project-card-preview">
               <div
@@ -332,8 +332,8 @@
               </div>
             </div>
             <div class="project-card-body">
-              <div class="project-card-tag">Desain UI/UX &bull; 2023</div>
-              <h3 class="project-card-title">Dzapin Merchant (QRIS)</h3>
+              <div class="project-card-tag">Desain UI/UX &bull; 2026</div>
+              <h3 class="project-card-title">Zapin Merchant (QRIS)</h3>
               <p class="project-card-desc">
                 Perancangan ulang antarmuka aplikasi mobile dan desain website portal transaksi pedagang Bank Riau Kepri
                 Syariah.
@@ -346,7 +346,7 @@
               </div>
             </div>
             <div class="project-card-footer">
-              <span>Lihat Detail Pratinjau</span>
+              <span>Lihat Detail &amp; Desain Figma</span>
               <span>&rarr;</span>
             </div>
           </article>
@@ -1142,8 +1142,7 @@
         </div>
 
         <!-- Spesifikasi Peran & Tech -->
-        <div
-          style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem;
+        <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem;
           padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.78rem;">
           <div>
             <span style="color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Peran &amp; Tanggung
@@ -1168,18 +1167,20 @@
           </ul>
         </div>
 
-        <!-- Tombol Download Game Desktop (Sama Panjang dengan Card Peran & Tanggung Jawab) -->
-        <div id="modalDownloadContainer" style="display: none; width: 100%; margin-top: 0.25rem;">
+        <!-- Tombol Download / Aksi Proyek (Sama Panjang dengan Card Peran & Tanggung Jawab) -->
+        <div id="modalDownloadContainer" style="display: none; width: 100%; margin-top: 0.35rem;">
           <a id="modalDownloadLink" href="https://renand-studio.itch.io/siak-palace-tour" target="_blank"
             rel="noopener noreferrer" class="btn btn-primary"
             style="display: flex; justify-content: center; align-items: center; width: 100%; box-sizing: border-box; gap: 0.5rem; text-decoration: none; padding: 0.75rem 1.25rem; font-size: 0.85rem; font-weight: 500; border-radius: 0.5rem;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span>Download Game Versi Desktop (itch.io)</span>
+            <span id="modalActionIcon" style="display: inline-flex; align-items: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </span>
+            <span id="modalActionText">Download Game Versi Desktop (itch.io)</span>
             <span style="font-size: 0.9rem;">&nearr;</span>
           </a>
         </div>
@@ -1187,7 +1188,7 @@
 
       <div class="modal-footer" style="display: flex; justify-content: flex-end;">
         <button class="btn btn-primary" id="modalCloseFooter" style="padding: 0.45rem 1.25rem; font-size: 0.78rem;">
-          Pratinjau
+          Tutup
         </button>
       </div>
     </div>

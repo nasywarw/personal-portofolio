@@ -125,6 +125,8 @@ const PROJECTS_DATA = {
     role: '3D modeling seluruh bangunan yang ada di dalam komplek Istana Siak serta arsitektur bagian dalam Istana Siak dan memerhatikan kompatibilitas model untuk diimport ke Unity (mengatur polycount dan face agar tidak berlebihan sehingga performa game lancar dan bebas lag).',
     tech: ['3D Blender', 'Adobe Substance Painter', 'Unity'],
     downloadUrl: 'https://renand-studio.itch.io/siak-palace-tour',
+    actionLabel: 'Download Game Versi Desktop (itch.io)',
+    actionIcon: 'download',
     highlights: [
       'Pemodelan arsitektur 3D seluruh bangunan komplek istana dan detail interior dengan presisi proporsi tinggi.',
       'Teksturisasi material realistis menggunakan Adobe Substance Painter.',
@@ -156,7 +158,7 @@ const PROJECTS_DATA = {
   'sijagat': {
     number: '02',
     category: 'Pengembangan Android / Deep Learning',
-    year: '2024',
+    year: '2025',
     context: 'Inovasi Mitigasi Kebakaran Hutan & Lahan',
     title: 'SIJAGAT: Aplikasi Deteksi Api dan Asap Berbasis Mobile Menggunakan Deep Learning',
     summary: 'Aplikasi Android yang dirancang untuk mendeteksi keberadaan api dan asap secara real-time langsung melalui feed kamera ponsel menggunakan model computer vision YOLOv8 yang telah dioptimasi.',
@@ -218,32 +220,20 @@ const PROJECTS_DATA = {
   'dzapin': {
     number: '04',
     category: 'Desain UI/UX',
-    year: '2023',
+    year: '2026',
     context: 'Rekomendasi Desain — PT. Bank Riau Kepri Syariah',
-    title: 'Perancangan UI/UX Aplikasi dan Website Dzapin Merchant (QRIS Merchant) PT. Bank Riau Kepri Syariah',
+    title: 'Perancangan UI/UX Aplikasi dan Website Zapin Merchant (QRIS Merchant) PT. Bank Riau Kepri Syariah',
     summary: 'Proyek perancangan ulang antarmuka aplikasi mobile dan perancangan UI/UX website baru untuk layanan transaksi pedagang QRIS Merchant perbankan syariah.',
     role: 'UI/UX Designer (Magang)',
     tech: ['Figma', 'Design Systems', 'Interactive Prototyping', 'User Flow'],
-    challenge: 'Menyederhanakan alur transaksi agar kasir dan pemilik usaha UMKM dapat memantau mutasi secara cepat.',
-    solution: 'Menyusun alur 3 prioritas (QRIS Cepat, Omzet Hari Ini, Mutasi) dengan kartu visual kontras tinggi.',
+    hideCarousel: true,
+    actionUrl: 'https://www.figma.com/design/MPyFGhd1f896xHzWhXASYR/Zapin-Merchant?node-id=2-5&t=KM9v1epWhsK0buDR-1',
+    actionLabel: 'Buka Desain di Figma (Zapin Merchant)',
+    actionIcon: 'figma',
     highlights: [
       'Redesign antarmuka mobile agar ramah bagi merchant UMKM pemula.',
       'Perancangan UI/UX website dashboard analitik pedagang.',
       'Penyusunan Design System terstandar berpedoman pada identitas bank syariah.'
-    ],
-    slides: [
-      {
-        title: 'Tampilan Utama Aplikasi Mobile Merchant',
-        caption: 'Alur penerimaan QRIS cepat, ringkasan omzet harian, dan notifikasi suara transaksi.'
-      },
-      {
-        title: 'Dashboard Web Portal Analitik Transaksi',
-        caption: 'Grafik riwayat transaksi mingguan dan filter mutasi rekening toko.'
-      },
-      {
-        title: 'Komponen Design System Terstandar',
-        caption: 'Skala tipografi, palet warna perbankan, variasi tombol aksi, dan tabel data terstruktur.'
-      }
     ]
   }
 };
@@ -374,8 +364,34 @@ function initProjectModalWithCarousel() {
 
     const downloadContainer = document.getElementById('modalDownloadContainer');
     const downloadLink = document.getElementById('modalDownloadLink');
-    if (data.downloadUrl) {
-      if (downloadLink) downloadLink.href = data.downloadUrl;
+    const actionText = document.getElementById('modalActionText');
+    const actionIcon = document.getElementById('modalActionIcon');
+
+    const targetUrl = data.actionUrl || data.downloadUrl;
+    if (targetUrl) {
+      if (downloadLink) downloadLink.href = targetUrl;
+      if (actionText) actionText.textContent = data.actionLabel || 'Download File / Buka Tautan';
+      if (actionIcon) {
+        if (data.actionIcon === 'figma') {
+          actionIcon.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+              <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+              <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+              <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+              <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+            </svg>
+          `;
+        } else {
+          actionIcon.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          `;
+        }
+      }
       if (downloadContainer) downloadContainer.style.display = 'block';
     } else {
       if (downloadContainer) downloadContainer.style.display = 'none';
@@ -406,20 +422,29 @@ function initProjectModalWithCarousel() {
       highlightsContainer.appendChild(li);
     });
 
-    renderCarousel(data.slides);
+    const carouselWrapper = document.querySelector('.project-carousel-wrapper');
+    if (data.hideCarousel || !data.slides || data.slides.length === 0) {
+      if (carouselWrapper) carouselWrapper.style.display = 'none';
+      clearInterval(projectCarouselInterval);
+    } else {
+      if (carouselWrapper) carouselWrapper.style.display = 'block';
+      renderCarousel(data.slides);
 
-    prevBtn.onclick = () => {
-      prevSlide(data.slides.length);
-      startCarouselAutoPlay(data.slides.length);
-    };
-    nextBtn.onclick = () => {
-      nextSlide(data.slides.length);
-      startCarouselAutoPlay(data.slides.length);
-    };
+      prevBtn.onclick = () => {
+        prevSlide(data.slides.length);
+        startCarouselAutoPlay(data.slides.length);
+      };
+      nextBtn.onclick = () => {
+        nextSlide(data.slides.length);
+        startCarouselAutoPlay(data.slides.length);
+      };
 
-    const carouselBox = document.getElementById('projectCarouselBox');
-    carouselBox.onmouseenter = () => clearInterval(projectCarouselInterval);
-    carouselBox.onmouseleave = () => startCarouselAutoPlay(data.slides.length);
+      const carouselBox = document.getElementById('projectCarouselBox');
+      if (carouselBox) {
+        carouselBox.onmouseenter = () => clearInterval(projectCarouselInterval);
+        carouselBox.onmouseleave = () => startCarouselAutoPlay(data.slides.length);
+      }
+    }
 
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
