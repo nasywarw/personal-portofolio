@@ -406,8 +406,8 @@ button {
 
 @media (min-width: 992px) {
   .hero-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 3.5rem;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 3rem;
   }
 }
 
@@ -482,7 +482,7 @@ button {
 /* Portrait Frame with Real User Photo */
 .portrait-card {
   position: relative;
-  max-width: 21rem;
+  max-width: 16.5rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -496,14 +496,14 @@ button {
 .portrait-frame {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 1.15rem;
-  padding: 0.85rem;
-  box-shadow: var(--shadow-elevated);
+  border-radius: 1rem;
+  padding: 0.65rem;
+  box-shadow: var(--shadow-subtle);
 }
 
 .portrait-inner {
   aspect-ratio: 3 / 4;
-  border-radius: 0.85rem;
+  border-radius: 0.75rem;
   background-color: #E7E4DC;
   border: 1px solid var(--border-color);
   overflow: hidden;
@@ -519,36 +519,36 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 15%;
   display: block;
 }
 
 .portrait-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(37, 37, 34, 0.75) 0%, rgba(37, 37, 34, 0.2) 40%, transparent 65%);
+  background: linear-gradient(to top, rgba(37, 37, 34, 0.78) 0%, rgba(37, 37, 34, 0.22) 38%, transparent 65%);
   pointer-events: none;
 }
 
 .portrait-badge-content {
   position: relative;
   z-index: 2;
-  padding: 1.15rem;
+  padding: 0.85rem;
   color: #FFFFFF;
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 .portrait-name {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: #FFFFFF;
   line-height: 1.25;
 }
 
 .portrait-role {
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.9);
   font-family: monospace;
   margin-top: 0.2rem;
 }
@@ -572,6 +572,13 @@ button {
   color: #383733;
   text-align: justify;
   text-justify: inter-word;
+}
+
+.highlight-text {
+  color: var(--text-main);
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 65%, rgba(140, 121, 101, 0.2) 65%);
+  padding: 0 0.15rem;
 }
 
 /* SECTION 03 — PORTOFOLIO (Card Rapi, Nyaman & Rata Kanan-Kiri) */
