@@ -118,12 +118,13 @@ const PROJECTS_DATA = {
   'siak': {
     number: '01',
     category: 'Pemodelan 3D / Virtual Reality',
-    year: '2024',
-    context: 'Proyek Akhir & Pelestarian Warisan Budaya',
+    year: '2025',
+    context: 'Proyek Akhir',
     title: 'Pembuatan Model 3D Detil Bangunan Istana Siak untuk Lingkungan Virtual Immersive',
     summary: 'Proyek pengembangan lingkungan virtual imersif yang menghadirkan model 3D bangunan bersejarah Istana Siak beserta elemen arsitektur interior dan eksterior aslinya secara mendetail.',
     role: '3D modeling seluruh bangunan yang ada di dalam komplek Istana Siak serta arsitektur bagian dalam Istana Siak dan memerhatikan kompatibilitas model untuk diimport ke Unity (mengatur polycount dan face agar tidak berlebihan sehingga performa game lancar dan bebas lag).',
     tech: ['3D Blender', 'Adobe Substance Painter', 'Unity'],
+    downloadUrl: 'https://renand-studio.itch.io/siak-palace-tour',
     highlights: [
       'Pemodelan arsitektur 3D seluruh bangunan komplek istana dan detail interior dengan presisi proporsi tinggi.',
       'Teksturisasi material realistis menggunakan Adobe Substance Painter.',
@@ -132,23 +133,23 @@ const PROJECTS_DATA = {
     slides: [
       {
         image: 'images/projects/siak/siak-exterior.jpg',
-        title: 'Model 3D Fasad Eksterior Istana Siak',
-        caption: 'Rekonstruksi digital tampak luar bangunan Istana Siak dengan proporsi arsitektur simetris dan pilar kubah khas Melayu-Eropa.'
+        title: 'Model 3D  Istana Siak',
+        caption: 'Tampak luar bangunan Istana Siak dengan pilar kubah khas Melayu-Eropa.'
       },
       {
         image: 'images/projects/siak/siak-interior-1.jpg',
-        title: 'Koridor Interior & Busur Lengkung Berornamen',
+        title: 'Koridor Interior',
         caption: 'Pemodelan lorong istana dengan detail lantai marmer, jendela berpola, dan panel dinding bermotif tradisional.'
       },
       {
         image: 'images/projects/siak/siak-interior-2.jpg',
-        title: 'Aula Utama & Detail Plafon Kotak (Coffered Ceiling)',
-        caption: 'Struktur ruang aula dengan pencahayaan ambient alami serta ornamen relief dinding klasik yang otentik.'
+        title: 'Aula Utama',
+        caption: 'Struktur ruang aula dengan ornamen dinding klasik.'
       },
       {
         image: 'images/projects/siak/siak-interior-3.jpg',
-        title: 'Gerbang Lengkung Penghubung Antar Ruangan',
-        caption: 'Detail arsitektur lengkungan khas perpaduan Melayu dan Eropa yang imersif saat dieksplorasi di dalam lingkungan Virtual Reality.'
+        title: 'Gerbang Penghubung Antar Ruangan',
+        caption: 'Detail arsitektur lengkungan khas perpaduan Melayu dan Eropa.'
       }
     ]
   },
@@ -308,15 +309,15 @@ function initProjectModalWithCarousel() {
 
       if (slide.image) {
         slideDiv.innerHTML = `
-          <div style="background-color: var(--bg-card); border-radius: 0.65rem; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; box-shadow: var(--shadow-subtle);">
-            <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background-color: #1c1b18;">
+          <div style="background-color: var(--bg-card); border-radius: 0.55rem; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; box-shadow: var(--shadow-subtle);">
+            <div style="position: relative; width: 100%; height: 220px; overflow: hidden; background-color: #1c1b18;">
               <img src="${slide.image}" alt="${slide.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
-            <div style="padding: 0.85rem 1.15rem; background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
-              <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.25rem;">
+            <div style="padding: 0.65rem 0.95rem; background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+              <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.2rem;">
                 ${slide.title}
               </div>
-              <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.55; text-align: justify; text-justify: inter-word;">
+              <div style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.5; text-align: justify; text-justify: inter-word;">
                 ${slide.caption}
               </div>
             </div>
@@ -324,23 +325,23 @@ function initProjectModalWithCarousel() {
         `;
       } else {
         slideDiv.innerHTML = `
-          <div style="background-color: #252422; border-radius: 0.5rem; padding: 1.5rem; color: #FAF8F5; min-height: 13rem; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace; border: 1px solid #3D3A33;">
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #3D3A33; padding-bottom: 0.4rem; font-size: 0.7rem; color: #A8A49A;">
+          <div style="background-color: #252422; border-radius: 0.5rem; padding: 1.25rem; color: #FAF8F5; min-height: 10rem; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace; border: 1px solid #3D3A33;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #3D3A33; padding-bottom: 0.35rem; font-size: 0.68rem; color: #A8A49A;">
               <span style="display: flex; align-items: center; gap: 0.35rem;">
                 <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #8C7965;"></span>
                 WEB_PREVIEW_INTERFACE
               </span>
               <span>100% RESPONSIVE</span>
             </div>
-            <div style="text-align: center; margin: auto 0; padding: 1.25rem 0;">
-              <div style="font-family: var(--font-serif); font-size: 1.15rem; color: #E7E4DC; margin-bottom: 0.35rem;">
+            <div style="text-align: center; margin: auto 0; padding: 0.75rem 0;">
+              <div style="font-family: var(--font-serif); font-size: 1.05rem; color: #E7E4DC; margin-bottom: 0.25rem;">
                 ${slide.title}
               </div>
-              <div style="font-size: 0.75rem; color: #A8A49A; max-width: 24rem; margin: 0 auto; line-height: 1.6; text-align: justify; text-justify: inter-word;">
+              <div style="font-size: 0.74rem; color: #A8A49A; max-width: 24rem; margin: 0 auto; line-height: 1.5; text-align: justify; text-justify: inter-word;">
                 ${slide.caption}
               </div>
             </div>
-            <div style="display: flex; justify-content: space-between; border-top: 1px solid #3D3A33; padding-top: 0.4rem; font-size: 0.68rem; color: #8E8B83;">
+            <div style="display: flex; justify-content: space-between; border-top: 1px solid #3D3A33; padding-top: 0.35rem; font-size: 0.68rem; color: #8E8B83;">
               <span>MODUL DIGITAL</span>
               <span style="color: #8C7965;">DOKUMEN RESMI</span>
             </div>
@@ -401,6 +402,15 @@ function initProjectModalWithCarousel() {
     document.getElementById('modalProjectTitle').textContent = data.title;
     document.getElementById('modalProjectSummary').textContent = data.summary;
     document.getElementById('modalProjectRole').textContent = data.role;
+
+    const downloadContainer = document.getElementById('modalDownloadContainer');
+    const downloadLink = document.getElementById('modalDownloadLink');
+    if (data.downloadUrl) {
+      if (downloadLink) downloadLink.href = data.downloadUrl;
+      if (downloadContainer) downloadContainer.style.display = 'block';
+    } else {
+      if (downloadContainer) downloadContainer.style.display = 'none';
+    }
 
     const challengeEl = document.getElementById('modalProjectChallenge');
     if (challengeEl) challengeEl.textContent = data.challenge || '';

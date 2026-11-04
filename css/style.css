@@ -820,6 +820,12 @@ button {
 }
 
 /* CAROUSEL CONTROLS & MODAL SLIDER */
+.project-carousel-wrapper {
+  max-width: 38rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .carousel-container {
   position: relative;
   overflow: hidden;
@@ -845,11 +851,11 @@ button {
 
 .carousel-btn {
   position: absolute;
-  top: 42%;
+  top: 112px;
   transform: translateY(-50%);
   z-index: 5;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: rgba(247, 246, 242, 0.95);
   border: 1px solid var(--border-color);
@@ -876,27 +882,36 @@ button {
   right: 0.5rem;
 }
 
+/* Dots bar strictly static flow, never floating or overlapping */
+.carousel-dots-wrapper,
 .carousel-indicators,
 .carousel-indicators-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-  z-index: 5;
+  position: static !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  margin: 0.65rem auto 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  z-index: 2 !important;
+  transform: none !important;
+  left: auto !important;
+  bottom: auto !important;
 }
 
 .carousel-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: rgba(140, 121, 101, 0.4);
+  background-color: #D3CEC4;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .carousel-dot.active {
   background-color: var(--accent);
-  width: 16px;
+  width: 18px;
   border-radius: 3px;
 }
 
