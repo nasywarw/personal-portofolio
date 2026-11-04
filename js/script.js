@@ -192,28 +192,30 @@ const PROJECTS_DATA = {
     year: '2025',
     context: 'PT. Nusareka Prima Engineering',
     title: 'Rancang Bangun Sistem Manajemen Internal PT. Nusareka Prima Engineering',
-    summary: 'Sistem berbasis web yang dikembangkan untuk mengintegrasikan informasi dan proses administrasi internal dari berbagai divisi perusahaan ke dalam satu platform terpusat.',
+    summary: 'Dikembangkan sebagai bagian dari proyek magang di PT. Nusareka Prima Engineering untuk menggantikan pengelolaan informasi berbasis dokumen fisik menjadi sistem web internal terpusat. Berperan sebagai Full-Stack Developer yang bertanggung jawab membangun modul Human Resource dan Safety, serta menerapkan sistem autentikasi, kontrol akses berjenjang (RBAC), dan pengamanan seperti pencegahan navigasi kembali tanpa izin (unauthorized back navigation).',
     role: 'Full-Stack Web Developer (Magang)',
-    tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
-    challenge: 'Mengintegrasikan data HR, Safety K3, dan slip gaji yang sebelumnya tercecer di spreadsheet terpisah.',
-    solution: 'Merancang basis data relasional MySQL terpusat dengan Role-Based Access Control (RBAC) di Laravel.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'Laravel Scheduler', 'Select2', 'SweetAlert'],
+    actionUrl: 'https://www.figma.com/proto/TgvVfczuHk9em3aeIqN7mV/Porto?node-id=37-111&t=9Jsnnvnay9OdoBeF-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=37%3A111',
+    actionLabel: 'Lihat Desain Prototipe di Figma',
+    actionIcon: 'figma',
     highlights: [
-      'Fitur manajemen Human Resource: data karyawan, kontrak, dan slip gaji otomatis.',
-      'Fitur manajemen Safety: logbook kepatuhan K3 dan pelaporan inspeksi lapangan.',
-      'Pencatatan absensi digital dan penerbitan slip gaji PDF terenkripsi.'
+      'Modul Human Resource: Pengelolaan data karyawan, manajemen slip gaji, dan alokasi cuti staf, dilengkapi otomasi penghapusan data karyawan kontrak yang habis masa berlakunya menggunakan Laravel Scheduler.',
+      'Modul Safety: Pengelolaan laporan insiden keselamatan (safety reports), inspeksi keselamatan kerja, dan manajemen sertifikasi keahlian karyawan yang tetap terarsip aman meskipun data karyawan telah dinonaktifkan dari sistem.',
+      'Implementasi Keamanan & UX: Penerapan sistem autentikasi, kontrol akses berjenjang (Role-Based Access Control), proteksi navigasi kembali tanpa otorisasi, serta integrasi pustaka pendukung seperti Select2 dan SweetAlert guna meningkatkan efisiensi alur kerja dan pengalaman pengguna.'
     ],
     slides: [
       {
-        title: 'Dashboard Utama Sistem Manajemen Internal',
-        caption: 'Ikhtisar analitik kehadiran pegawai harian dan status kepatuhan keselamatan kerja K3.'
+        title: 'Halaman Pengenalan & Portal Perusahaan',
+        caption: 'Antarmuka profil dan sistem web internal PT. Nusareka Prima Engineering.',
+        image: 'images/projects/nusareka/nusareka-thumb.jpg'
       },
       {
-        title: 'Modul Manajemen Karyawan & Slip Gaji',
-        caption: 'Pencatatan otomatis jam lembur, potongan pajak, dan penerbitan slip gaji digital PDF.'
+        title: 'Modul Human Resource & Otomasi Kontrak',
+        caption: 'Pengelolaan data pegawai, slip gaji, dan alokasi cuti dengan otomasi Laravel Scheduler.'
       },
       {
-        title: 'Modul Pengawasan Safety & Absensi',
-        caption: 'Sistem logbook K3 dan pencatatan presensi digital karyawan proyek.'
+        title: 'Modul Safety K3 & Pengarsipan Sertifikasi',
+        caption: 'Pencatatan laporan keselamatan, inspeksi lapangan, dan arsip sertifikasi staf terintegrasi.'
       }
     ]
   },
