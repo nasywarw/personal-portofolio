@@ -1,19 +1,1580 @@
-<!doctype html>
-<html lang="id" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238C7965'/><text x='50' y='65' font-size='48' font-family='serif' fill='%23F7F6F2' text-anchor='middle'>P</text></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio Profesional | Perancang & Pengembang Teknologi</title>
-    <meta name="description" content="Website portofolio profesional dengan fokus pada Desain UI/UX, Web & Android Development, Pemodelan 3D, Virtual Reality, dan Machine Learning." />
-    
-    <!-- Google Fonts: Lora (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-warm-bg text-warm-text font-sans antialiased selection:bg-warm-accent-soft selection:text-warm-text">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Profesional | Perancang & Pengembang Teknologi</title>
+  <meta name="description" content="Website portofolio profesional dengan estetika Warm Editorial berfokus pada Desain UI/UX, Web & Android Development, Pemodelan 3D, Virtual Reality, dan Machine Learning.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238C7965'/><text x='50' y='65' font-size='48' font-family='serif' fill='%23F7F6F2' text-anchor='middle'>R</text></svg>">
+  
+  <!-- Google Fonts: Lora (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet Warm Editorial -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGASI WEBSITE
+       Urutan menu wajib: Profil, Tentang Saya, Portofolio, Pengabdian, Sertifikat, Kontak
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#profil" class="brand-monogram">
+        <span class="monogram-badge">R</span>
+        <span>Raihan Pratama</span>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="nav-links" aria-label="Navigasi Utama">
+        <a href="#profil" class="nav-link active">Profil</a>
+        <a href="#tentang-saya" class="nav-link">Tentang Saya</a>
+        <a href="#portofolio" class="nav-link">Portofolio</a>
+        <a href="#pengabdian" class="nav-link">Pengabdian</a>
+        <a href="#sertifikat" class="nav-link">Sertifikat</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+
+      <!-- Status Pill -->
+      <div class="header-status">
+        <span class="status-dot"></span>
+        <span>Tersedia untuk Kolaborasi</span>
+      </div>
+
+      <!-- Tombol Menu Mobile -->
+      <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Navigasi Mobile -->
+    <div class="mobile-nav" id="mobileNav">
+      <nav class="mobile-nav-links">
+        <a href="#profil" class="mobile-nav-link active">Profil</a>
+        <a href="#tentang-saya" class="mobile-nav-link">Tentang Saya</a>
+        <a href="#portofolio" class="mobile-nav-link">Portofolio</a>
+        <a href="#pengabdian" class="mobile-nav-link">Pengabdian</a>
+        <a href="#sertifikat" class="mobile-nav-link">Sertifikat</a>
+        <a href="#kontak" class="mobile-nav-link">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 01 — PROFIL / HERO
+         Perkenalan singkat profesional, ketersediaan, bingkai potret, dan 3 tombol
+         ========================================================================= -->
+    <section id="profil" class="hero-section">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span>01 / Profil</span>
+          <span class="section-tag-sub">Perkenalan Profesional</span>
+        </div>
+
+        <div class="hero-grid">
+          <!-- Sisi Kiri: Deskripsi & Tombol Aksi -->
+          <div class="hero-text-col">
+            <div class="hero-badge-pill">
+              <span class="status-dot"></span>
+              <span>Terbuka untuk kesempatan kolaborasi dan proyek baru</span>
+            </div>
+
+            <h1 class="hero-title">M. Raihan Pratama</h1>
+            <div class="hero-subtitle">Software Engineer &amp; Desainer Produk Digital</div>
+
+            <p class="hero-bio">
+              Berfokus pada pengembangan sistem web, aplikasi mobile native, dan perancangan antarmuka digital yang fungsional, terukur, serta nyaman digunakan.
+            </p>
+
+            <div class="hero-meta-strip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8C7965" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Pekanbaru, Riau &bull; Indonesia</span>
+            </div>
+
+            <!-- Tiga tombol ajakan sesuai ketentuan -->
+            <div class="hero-actions">
+              <a href="#portofolio" class="btn btn-primary">
+                <span>Lihat Portofolio</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+              <a href="#tentang-saya" class="btn btn-secondary">Tentang Saya</a>
+              <a href="#kontak" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+          </div>
+
+          <!-- Sisi Kanan: Bingkai Potret Editorial -->
+          <div class="hero-image-col">
+            <div class="portrait-card">
+              <div class="portrait-frame">
+                <div class="portrait-inner">
+                  <div class="portrait-tagline">
+                    <span>Identitas Profesional</span>
+                    <span>No. 001/ENG</span>
+                  </div>
+
+                  <div class="portrait-center">
+                    <div class="portrait-avatar">RP</div>
+                    <div>
+                      <div class="portrait-name">M. Raihan Pratama</div>
+                      <div class="portrait-role">Engineer &bull; Designer</div>
+                    </div>
+                  </div>
+
+                  <div class="portrait-footer">
+                    <span>Pekanbaru, ID</span>
+                    <span style="color: var(--accent); font-weight: 500;">Aktif Membangun</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 02 — TENTANG SAYA
+         Cerita lengkap perjalanan teknologi & 7 ranah bidang keahlian
+         ========================================================================= -->
+    <section id="tentang-saya" class="section-wrapper section-alt">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span>02 / Tentang Saya</span>
+          <span class="section-tag-sub">Perjalanan, Filosofi &amp; Keahlian</span>
+        </div>
+
+        <h2 class="about-lead">
+          Membangun teknologi yang bukan hanya bekerja secara teknis, tetapi juga memberi nilai nyata bagi penggunanya.
+        </h2>
+
+        <!-- Cerita & Filosofi -->
+        <div class="about-story-grid">
+          <div>
+            <div class="philosophy-box">
+              <div style="font-family: monospace; font-size: 0.72rem; color: var(--accent); text-transform: uppercase;">
+                Pendekatan Rekayasa
+              </div>
+              <p class="philosophy-quote">
+                &ldquo;Saya melihat kode dan antarmuka sebagai dua sisi dari mata uang yang sama. Keandalan logika di belakang layar hanya akan terasa bermakna saat pengguna dapat berinteraksi dengannya secara intuitif dan tanpa hambatan.&rdquo;
+              </p>
+              <div style="font-size: 0.75rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                Prinsip kerja: Ketelitian teknis, kode bersih, dan empati terhadap pengguna.
+              </div>
+            </div>
+          </div>
+
+          <div class="about-paragraphs">
+            <p>
+              Perjalanan saya di dunia teknologi berawal dari ketertarikan mendalam terhadap bagaimana baris kode dan komposisi visual dapat dipadukan untuk memecahkan persoalan di kehidupan sehari-hari. Selama masa studi dan berbagai proyek kolaboratif, saya tidak membatasi diri pada satu bidang saja, melainkan aktif mengeksplorasi spektrum rekayasa perangkat lunak dari arsitektur backend, antarmuka pengguna, hingga inferensi model kecerdasan buatan.
+            </p>
+            <p>
+              Bagi saya, perangkat lunak yang andal lahir dari pemahaman menyeluruh terhadap kebutuhan pengguna dan ketelitian implementasi teknis. Ketika merancang sistem internal perusahaan, aplikasi mobile berbasis deep learning, maupun model virtual reality, saya selalu memprioritaskan performa yang stabil, struktur kode yang bersih, serta pengalaman interaksi yang manusiawi.
+            </p>
+            <p>
+              Saat ini, saya terus mengasah keahlian dalam perancangan arsitektur perangkat lunak modern, optimasi model machine learning pada perangkat edge, serta eksplorasi antarmuka spasial yang imersif.
+            </p>
+          </div>
+        </div>
+
+        <!-- 7 Ranah Pekerjaan (Katalog Editorial Berkelas) -->
+        <div class="disciplines-catalog">
+          <div class="disciplines-header">
+            <div>
+              <div style="font-family: monospace; font-size: 0.72rem; color: var(--accent); text-transform: uppercase; margin-bottom: 0.25rem;">
+                Eksplorasi Multidisiplin
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400; color: var(--text-main);">
+                Bidang &amp; Ranah Pekerjaan
+              </h3>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); max-width: 25rem;">
+              Tujuh fokus utama yang saya tekuni melalui riset akademis, proyek profesional, dan pengembangan prototipe mandiri.
+            </p>
+          </div>
+
+          <div class="catalog-list">
+            <!-- 1. Web -->
+            <div class="catalog-item">
+              <div class="catalog-title-group">
+                <span class="catalog-index">01</span>
+                <div>
+                  <h4 class="catalog-title">Pengembangan Web</h4>
+                  <span class="catalog-tag">Full-Stack Development</span>
+                </div>
+              </div>
+              <p class="catalog-desc">
+                Membangun sistem web yang terstruktur, aman, dan responsif. Berpengalaman menangani logika bisnis kompleks, manajemen basis data relasional, hingga antarmuka dinamis modern.
+              </p>
+              <div class="catalog-skills">
+                <span class="skill-pill">Laravel</span>
+                <span class="skill-pill">PHP</span>
+                <span class="skill-pill">MySQL</span>
+                <span class="skill-pill">Tailwind CSS</span>
+                <span class="skill-pill">RESTful API</span>
+              </div>
+            </div>
+
+            <!-- 2. UI/UX -->
+            <div class="catalog-item">
+              <div class="catalog-title-group">
+                <span class="catalog-index">02</span>
+                <div>
+                  <h4 class="catalog-title">Desain UI/UX</h4>
+                  <span class="catalog-tag">Product &amp; Interface Design</span>
+                </div>
+              </div>
+              <p class="catalog-desc">
+                Merancang tata letak dan alur interaksi produk digital yang intuitif melalui riset kebutuhan pengguna, wireframing, penyusunan design system terstandar, dan prototyping interaktif.
+              </p>
+              <div class="catalog-skills">
+                <span class="skill-pill">Figma</span>
+                <span class="skill-pill">Design Systems</span>
+                <span class="skill-pill">Wireframing</span>
+                <span class="skill-pill">User Flow</span>
+                <span class="skill-pill">Heuristics</span>
+              </div>
+            </div>
+
+            <!-- 3. Android -->
+            <div class="catalog-item">
+              <div class="catalog-title-group">
+                <span class="catalog-index">03</span>
+                <div>
+                  <h4 class="catalog-title">Pengembangan Aplikasi Android</h4>
+                  <span class="catalog-tag">Mobile Engineering</span>
+                </div>
+              </div>
+              <p class="catalog-desc">
+                Mengembangkan aplikasi mobile native dengan arsitektur modern yang responsif, efisien dalam penggunaan memori, dan mampu berinteraksi langsung dengan sensor perangkat.
+              </p>
+              <div class="catalog-skills">
+                <span class="skill-pill">Kotlin</span>
+                <span class="skill-pill">Android Studio</span>
+                <span class="skill-pill">CameraX</span>
+                <span class="skill-pill">Coroutines</span>
+                <span class="skill-pill">Jetpack</span>
+              </div>
+            </div>
+
+            <!-- 4. 3D Modeling -->
+            <div class="catalog-item">
+              <div class="catalog-title-group">
+                <span class="catalog-index">04</span>
+                <div>
+                  <h4 class="catalog-title">Pemodelan 3D</h4>
+                  <span class="catalog-tag">Spatial &amp; Asset Modeling</span>
+                </div>
+              </div>
+              <p class="catalog-desc">
+                Menciptakan model tiga dimensi arsitektural dengan tingkat akurasi tinggi, topologi rapi, serta pembuatan material tekstur fotorealistik yang dioptimalkan untuk performa realtime.
+              </p>
+              <div class="catalog-skills">
+                <span class="skill-pill">Blender</span>
+                <span class="skill-pill">Substance 3D</span>
+                <span class="skill-pill">UV Mapping</span>
+                <span class="skill-pill">PBR Texturing</span>
+              </div>
+            </div>
+
+            <!-- 5. VR -->
+            <div class="catalog-item">
+              <div class="catalog-title-group">
+                <span class="catalog-index">05</span>
+                <div>
+                  <h4 class="catalog-title">Virtual Reality</h4>
+                  <span class="catalog-tag">Immersive Experiences</span>
+                </div>
+              </div>
+              <p class="catalog-desc">
+                Mengintegrasikan aset 3D ke dalam engine interaktif untuk menghadirkan simulasi lingkungan virtual yang imersif, responsif terhadap pergerakan, dan stabil pada headset VR.
+              </p>
+              <div class="catalog-skills">
+                <span class="skill-pill">Unity</span>
+                <span class="skill-pill">Meta Quest SDK</span>
+                <span class="skill-pill">VR Rigging</span>
+                <span class="skill-pill">C# Scripting</span>
+              </div>
+            </div>
+
+            <!-- 6. GIS -->
+            <div class="catalog-item">
+              <div class="catalog-title-group">
+                <span class="catalog-index">06</span>
+                <div>
+                  <h4 class="catalog-title">Geographic Information System (GIS)</h4>
+                  <span class="catalog-tag">Spatial Analysis &amp; Mapping</span>
+                </div>
+              </div>
+              <p class="catalog-desc">
+                Mengolah, menganalisis, dan memvisualisasikan data spasial geografis ke dalam antarmuka peta interaktif berbasis web untuk memudahkan pencarian lokasi dan analisis jarak.
+              </p>
+              <div class="catalog-skills">
+                <span class="skill-pill">Leaflet.js</span>
+                <span class="skill-pill">OpenStreetMap</span>
+                <span class="skill-pill">GeoJSON</span>
+                <span class="skill-pill">Spatial Queries</span>
+              </div>
+            </div>
+
+            <!-- 7. Deep Learning -->
+            <div class="catalog-item">
+              <div class="catalog-title-group">
+                <span class="catalog-index">07</span>
+                <div>
+                  <h4 class="catalog-title">Deep Learning dan Machine Learning</h4>
+                  <span class="catalog-tag">Artificial Intelligence</span>
+                </div>
+              </div>
+              <p class="catalog-desc">
+                Melatih model computer vision untuk deteksi objek spesifik serta melakukan optimasi dan kuantisasi model agar dapat dijalankan secara efisien pada perangkat mobile bersumber daya terbatas.
+              </p>
+              <div class="catalog-skills">
+                <span class="skill-pill">YOLOv8</span>
+                <span class="skill-pill">PyTorch</span>
+                <span class="skill-pill">TensorFlow Lite</span>
+                <span class="skill-pill">Edge AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 03 — PORTOFOLIO
+         Tepat LIMA proyek dengan layout bervariasi dan pratinjau mendalam
+         ========================================================================= -->
+    <section id="portofolio" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span>03 / Portofolio</span>
+          <span class="section-tag-sub">Koleksi Karya Terpilih</span>
+        </div>
+
+        <div class="section-heading-wrap">
+          <h2 class="section-title">
+            Proyek Rekayasa Perangkat Lunak, Spasial, dan Antarmuka
+          </h2>
+          <p class="section-desc">
+            Tepat lima proyek unggulan yang merepresentasikan kemampuan teknis, ketelitian desain, dan pemecahan masalah nyata.
+          </p>
+        </div>
+
+        <div class="portfolio-showcase">
+          
+          <!-- ===============================================================
+               PROYEK 01 — VR ISTANA SIAK (Featured Large Editorial Spread)
+               =============================================================== -->
+          <article class="featured-project-card">
+            <div class="project-meta-bar">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <span class="project-tag">PROYEK 01</span>
+                <span class="project-category-text">Pemodelan 3D / Virtual Reality</span>
+              </div>
+              <div style="font-size: 0.75rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-family: monospace;">2024</span>
+                <span>&bull;</span>
+                <span>Warisan Budaya &amp; Simulasi Spasial</span>
+              </div>
+            </div>
+
+            <!-- Visual Preview Canvas VR Istana Siak -->
+            <div class="preview-canvas-box">
+              <div class="vr-visual-canvas">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #3A3832; padding-bottom: 0.5rem;">
+                  <span style="color: #D8D4CA; letter-spacing: 0.05em;">VR_ENV_SIAK_PALACE_LOD0</span>
+                  <span style="color: #A8A49A;">FPS: 72 (STABLE) &bull; POLY: 142.4K</span>
+                </div>
+
+                <!-- Siluet Arsitektur Istana Siak -->
+                <div style="text-align: center; margin-top: auto; margin-bottom: auto; padding: 1.5rem 0;">
+                  <svg viewBox="0 0 400 140" style="max-width: 26rem; margin: 0 auto; stroke: #C9B8A2; fill: none;" stroke-width="1.2">
+                    <!-- Kubah Utama & Menara -->
+                    <path d="M 200 15 C 185 15, 175 35, 170 50 L 230 50 C 225 35, 215 15, 200 15 Z" fill="#2E2B25" />
+                    <line x1="200" y1="5" x2="200" y2="15" stroke="#8C7965" stroke-width="1.5" />
+                    <!-- Kubah Samping -->
+                    <path d="M 120 35 C 110 35, 102 47, 100 57 L 140 57 C 138 47, 130 35, 120 35 Z" fill="#2A2722" />
+                    <path d="M 280 35 C 270 35, 262 47, 260 57 L 300 57 C 298 47, 290 35, 280 35 Z" fill="#2A2722" />
+                    <!-- Garis Atap & Badan Bangunan -->
+                    <line x1="70" y1="57" x2="330" y2="57" stroke="#8C7965" stroke-width="1.5" />
+                    <rect x="70" y="65" width="260" height="65" stroke="#C9B8A2" fill="#22211E" />
+                    <!-- Kolom Pilar Khas Istana Siak -->
+                    <line x1="90" y1="65" x2="90" y2="130" stroke="#8C7965" />
+                    <line x1="120" y1="65" x2="120" y2="130" stroke="#8C7965" />
+                    <line x1="150" y1="65" x2="150" y2="130" stroke="#8C7965" />
+                    <line x1="180" y1="65" x2="180" y2="130" stroke="#8C7965" />
+                    <line x1="220" y1="65" x2="220" y2="130" stroke="#8C7965" />
+                    <line x1="250" y1="65" x2="250" y2="130" stroke="#8C7965" />
+                    <line x1="280" y1="65" x2="280" y2="130" stroke="#8C7965" />
+                    <line x1="310" y1="65" x2="310" y2="130" stroke="#8C7965" />
+                    <!-- Pintu Lengkung Tengah -->
+                    <path d="M 185 130 L 185 95 C 185 88, 215 88, 215 95 L 215 130" stroke="#C9B8A2" stroke-width="1.5" fill="#1C1A17" />
+                    <!-- Reticle VR -->
+                    <circle cx="200" cy="85" r="18" stroke="#8C7965" stroke-dasharray="3 3" />
+                    <circle cx="200" cy="85" r="2.5" fill="#C9B8A2" />
+                  </svg>
+                  <div style="margin-top: 0.5rem; font-size: 0.68rem; color: #D8D4CA;">
+                    Blender Hard-Surface Mesh &bull; Substance PBR Shading &bull; Meta Quest VR
+                  </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #3A3832; padding-top: 0.5rem; font-size: 0.7rem; color: #8E8B83;">
+                  <span>PLATFORM: Meta Quest 2 / Quest 3</span>
+                  <span style="color: #C9B8A2;">Unity URP &bull; Baked Lighting</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detail Konten -->
+            <div class="project-content-split">
+              <div>
+                <h3 class="project-title">
+                  Pembuatan Model 3D Detil Bangunan Istana Siak untuk Lingkungan Virtual Immersive
+                </h3>
+                <p class="project-summary">
+                  Proyek pengembangan lingkungan virtual imersif yang menghadirkan model 3D bangunan bersejarah Istana Siak beserta elemen arsitektur khas Melayu dan interior aslinya secara mendetail.
+                </p>
+              </div>
+
+              <div class="project-specs-box">
+                <div style="font-size: 0.78rem;">
+                  <span style="color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Peran Saya:</span>
+                  <span style="font-weight: 600; color: var(--text-main);">3D Environmental Artist &amp; VR Integrator</span>
+                </div>
+
+                <div>
+                  <span style="color: var(--text-secondary); display: block; font-size: 0.75rem; margin-bottom: 0.4rem;">Teknologi:</span>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                    <span class="skill-pill">Blender</span>
+                    <span class="skill-pill">Substance 3D</span>
+                    <span class="skill-pill">Unity</span>
+                    <span class="skill-pill">Meta Quest</span>
+                    <span class="skill-pill">C#</span>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" data-project-id="siak">
+                  <span>Lihat Detail Proyek</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===============================================================
+               PROYEK 02 — SIJAGAT: DETEKSI API DAN ASAP (Split Row)
+               =============================================================== -->
+          <article class="split-project-row">
+            <div class="split-project-content">
+              <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <span class="project-tag">PROYEK 02</span>
+                <span class="project-category-text">Pengembangan Android / Deep Learning</span>
+                <span style="color: var(--text-secondary); font-size: 0.75rem;">&bull; 2024</span>
+              </div>
+
+              <h3 class="project-title">
+                SIJAGAT: Aplikasi Deteksi Api dan Asap Berbasis Mobile Menggunakan Deep Learning
+              </h3>
+
+              <p class="project-summary">
+                Aplikasi Android yang dirancang untuk mendeteksi keberadaan api dan asap menggunakan model deep learning secara real-time langsung melalui feed kamera ponsel tanpa koneksi server.
+              </p>
+
+              <div style="padding-top: 0.5rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.4rem;">
+                <div style="font-size: 0.78rem;">
+                  <span style="color: var(--text-secondary);">Peran:</span> 
+                  <span style="font-weight: 600; color: var(--text-main);">Android Developer &amp; Deep Learning Engineer</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem;">
+                  <span class="skill-pill">Kotlin</span>
+                  <span class="skill-pill">Android Studio</span>
+                  <span class="skill-pill">CameraX</span>
+                  <span class="skill-pill">YOLOv8</span>
+                  <span class="skill-pill">PyTorch</span>
+                  <span class="skill-pill">TensorFlow Lite</span>
+                </div>
+              </div>
+
+              <div>
+                <button class="btn btn-secondary" data-project-id="sijagat">
+                  <span>Lihat Detail Proyek</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8C7965" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Visual Preview Viewfinder Phone Android -->
+            <div class="preview-canvas-box">
+              <div class="android-visual-canvas">
+                <div class="phone-viewfinder">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: #A8A49A; border-bottom: 1px solid #322F29; padding-bottom: 0.35rem; font-family: monospace;">
+                    <span>14:32</span>
+                    <span style="color: #D8D4CA;">SIJAGAT_YOLOv8_TFLite</span>
+                    <span>82%</span>
+                  </div>
+
+                  <div class="viewfinder-screen">
+                    <!-- Bounding Box Api -->
+                    <div class="bounding-box-fire">
+                      <div class="box-label" style="background-color: #d97706;">Api (Flame) 94.6%</div>
+                      <div style="font-size: 0.58rem; color: #fde68a; font-family: monospace; align-self: flex-end;">x:120 y:84</div>
+                    </div>
+
+                    <!-- Bounding Box Asap -->
+                    <div class="bounding-box-smoke">
+                      <div class="box-label" style="background-color: #525252;">Asap (Smoke) 89.2%</div>
+                      <div style="font-size: 0.58rem; color: #e5e5e5; font-family: monospace; align-self: flex-end;">x:280 y:102</div>
+                    </div>
+
+                    <!-- Crosshair -->
+                    <div style="width: 1.5rem; height: 1.5rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                      <div style="width: 3px; height: 3px; background-color: rgba(255,255,255,0.7); border-radius: 50%;"></div>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; background-color: #26241F; padding: 0.45rem 0.65rem; border-radius: 0.35rem; font-size: 0.68rem; font-family: monospace;">
+                    <span style="color: #34d399;">Inferensi: 18ms &bull; CameraX 60 FPS</span>
+                    <span style="color: #A8A49A;">Model: INT8 13.8 MB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===============================================================
+               PROYEK 03 — SISTEM MANAJEMEN INTERNAL (Split Row Terbalik)
+               =============================================================== -->
+          <article class="split-project-row">
+            <!-- Visual Dashboard ERP -->
+            <div class="preview-canvas-box">
+              <div class="dashboard-visual-canvas">
+                <div class="erp-card-body">
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                    <div>
+                      <div style="font-size: 0.65rem; font-family: monospace; color: var(--text-secondary); text-transform: uppercase;">
+                        PT. Nusareka Prima Engineering
+                      </div>
+                      <div style="font-family: var(--font-serif); font-weight: 500; font-size: 0.88rem; color: var(--text-main);">
+                        Sistem Manajemen Operasional &amp; Administrasi
+                      </div>
+                    </div>
+                    <span style="font-size: 0.68rem; background-color: var(--accent-soft); color: var(--accent); padding: 0.2rem 0.55rem; border-radius: 0.25rem; font-weight: 600;">
+                      RBAC: HR &amp; K3
+                    </span>
+                  </div>
+
+                  <!-- 3 Kartu Metrik -->
+                  <div class="erp-metrics-grid">
+                    <div class="erp-metric-tile">
+                      <div style="color: var(--text-secondary); font-size: 0.65rem;">Kehadiran Staf</div>
+                      <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">97.4%</div>
+                      <div style="color: #047857; font-size: 0.62rem;">142/146 Hadir</div>
+                    </div>
+                    <div class="erp-metric-tile">
+                      <div style="color: var(--text-secondary); font-size: 0.65rem;">Kepatuhan K3</div>
+                      <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">100%</div>
+                      <div style="color: #047857; font-size: 0.62rem;">Zero Incident</div>
+                    </div>
+                    <div class="erp-metric-tile">
+                      <div style="color: var(--text-secondary); font-size: 0.65rem;">Payroll Bulanan</div>
+                      <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">Terverifikasi</div>
+                      <div style="color: var(--accent); font-size: 0.62rem; font-weight: 500;">Slip PDF Siap</div>
+                    </div>
+                  </div>
+
+                  <!-- Baris Tabel Data -->
+                  <div style="border: 1px solid var(--border-color); border-radius: 0.35rem; overflow: hidden; font-size: 0.72rem;">
+                    <div style="display: flex; justify-content: space-between; background-color: var(--bg-secondary); padding: 0.35rem 0.65rem; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border-color);">
+                      <span>Karyawan / Divisi</span>
+                      <span>Absensi</span>
+                      <span>Slip Gaji</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.45rem 0.65rem; border-bottom: 1px solid rgba(227, 224, 216, 0.6); background-color: #FFFFFF;">
+                      <span>Budi Santoso &bull; <span style="color: var(--text-secondary);">Site Eng.</span></span>
+                      <span style="color: #047857; background-color: #ecfdf5; padding: 0.1rem 0.35rem; border-radius: 0.2rem;">Hadir (07:48)</span>
+                      <span style="color: var(--accent); font-family: monospace;">PDF_READY</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.45rem 0.65rem; background-color: #FAF8F5;">
+                      <span>Siti Nurhaliza &bull; <span style="color: var(--text-secondary);">HSE Officer</span></span>
+                      <span style="color: #047857; background-color: #ecfdf5; padding: 0.1rem 0.35rem; border-radius: 0.2rem;">Hadir (07:55)</span>
+                      <span style="color: var(--accent); font-family: monospace;">PDF_READY</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Konten Nusareka -->
+            <div class="split-project-content">
+              <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <span class="project-tag">PROYEK 03</span>
+                <span class="project-category-text">Full-Stack Web Development</span>
+                <span style="color: var(--text-secondary); font-size: 0.75rem;">&bull; 2023 - 2024</span>
+              </div>
+
+              <h3 class="project-title">
+                Rancang Bangun Sistem Manajemen Internal PT. Nusareka Prima Engineering
+              </h3>
+
+              <p class="project-summary">
+                Sistem berbasis web yang dikembangkan untuk mengintegrasikan informasi dan proses administrasi internal dari berbagai divisi perusahaan (Human Resource, Safety K3, Slip Gaji, dan Absensi) ke dalam satu platform terpusat.
+              </p>
+
+              <div style="padding-top: 0.5rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.4rem;">
+                <div style="font-size: 0.78rem;">
+                  <span style="color: var(--text-secondary);">Peran:</span> 
+                  <span style="font-weight: 600; color: var(--text-main);">Full-Stack Web Developer</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem;">
+                  <span class="skill-pill">Laravel</span>
+                  <span class="skill-pill">PHP</span>
+                  <span class="skill-pill">MySQL</span>
+                  <span class="skill-pill">Tailwind CSS</span>
+                  <span class="skill-pill">RBAC</span>
+                </div>
+              </div>
+
+              <div>
+                <button class="btn btn-secondary" data-project-id="nusareka">
+                  <span>Lihat Detail Proyek</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8C7965" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===============================================================
+               PROYEK 04 & 05 — DUO EDITORIAL SHOWCASE
+               =============================================================== -->
+          <div class="duo-projects-grid">
+            
+            <!-- PROYEK 04: DZAPIN MERCHANT -->
+            <article class="duo-project-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <span class="project-tag">PROYEK 04</span>
+                  <span style="font-family: monospace; font-size: 0.75rem; color: var(--text-secondary);">2023</span>
+                </div>
+
+                <div class="preview-canvas-box" style="margin-bottom: 1rem;">
+                  <div class="figma-visual-canvas">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.72rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.4rem;">
+                      <span style="font-weight: 600; color: var(--text-main);">Figma: Dzapin Merchant QRIS</span>
+                      <span style="color: var(--text-secondary); font-family: monospace;">Redesign v2.4</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin: 0.75rem 0;">
+                      <div style="background-color: #FFFFFF; border: 1px solid var(--border-color); border-radius: 0.4rem; padding: 0.65rem; text-align: center;">
+                        <div style="font-size: 0.62rem; color: var(--text-secondary);">Omzet Hari Ini</div>
+                        <div style="font-family: var(--font-serif); font-weight: 700; font-size: 0.85rem; color: var(--text-main); margin-top: 0.2rem;">Rp 2.450.000</div>
+                        <div style="background-color: var(--accent-soft); border-radius: 0.25rem; font-size: 0.62rem; color: var(--accent); padding: 0.25rem; margin-top: 0.5rem; font-weight: 600;">[ Tampilkan QRIS ]</div>
+                      </div>
+                      <div style="background-color: #FFFFFF; border: 1px solid var(--border-color); border-radius: 0.4rem; padding: 0.65rem;">
+                        <div style="font-size: 0.62rem; color: var(--text-secondary);">Portal Analitik</div>
+                        <div style="height: 4px; background-color: var(--accent); border-radius: 2px; margin: 0.4rem 0;"></div>
+                        <div style="height: 4px; background-color: var(--border-color); border-radius: 2px; margin-bottom: 0.4rem;"></div>
+                        <div style="font-size: 0.62rem; color: var(--text-main); font-weight: 600;">32 Transaksi Sukses</div>
+                      </div>
+                    </div>
+
+                    <div style="background-color: #FFFFFF; border: 1px solid var(--border-color); border-radius: 0.35rem; padding: 0.35rem 0.5rem; font-size: 0.68rem; color: var(--text-secondary); display: flex; justify-content: space-between;">
+                      <span>Fokus: Kecepatan Verifikasi QRIS</span>
+                      <span style="color: var(--accent); font-weight: 600;">Design System</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="font-family: monospace; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">
+                  Desain UI/UX
+                </div>
+
+                <h4 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--text-main); margin-top: 0.25rem; line-height: 1.35;">
+                  Perancangan UI/UX Aplikasi dan Website Dzapin Merchant (QRIS Merchant) PT. Bank Riau Kepri Syariah
+                </h4>
+
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.6;">
+                  Proyek perancangan ulang antarmuka aplikasi mobile dan perancangan UI/UX website baru untuk layanan transaksi QRIS merchant perbankan syariah.
+                </p>
+
+                <!-- Catatan ruang lingkup wajib sesuai prompt -->
+                <div class="scope-notice-banner">
+                  <strong>Catatan Ruang Lingkup:</strong> Proyek ini merupakan hasil perancangan UI/UX komprehensif dan dokumen rekomendasi desain antarmuka.
+                </div>
+              </div>
+
+              <div style="padding-top: 0.75rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: var(--text-secondary);">UI/UX Designer</span>
+                <button class="btn btn-outline" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;" data-project-id="dzapin">
+                  Detail &amp; Alur Figma &rarr;
+                </button>
+              </div>
+            </article>
+
+            <!-- PROYEK 05: FUTSAL-GO -->
+            <article class="duo-project-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <span class="project-tag">PROYEK 05</span>
+                  <span style="font-family: monospace; font-size: 0.75rem; color: var(--text-secondary);">2023</span>
+                </div>
+
+                <div class="preview-canvas-box" style="margin-bottom: 1rem;">
+                  <div class="gis-visual-canvas">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.72rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.4rem;">
+                      <span style="font-weight: 600; color: var(--text-main);">Peta GIS: Pekanbaru &bull; Radius 5 Km</span>
+                      <span style="color: var(--text-secondary); font-family: monospace;">Leaflet.js</span>
+                    </div>
+
+                    <div style="position: relative; height: 7.5rem; background-color: #EBE9E1; border-radius: 0.4rem; margin: 0.65rem 0; overflow: hidden; border: 1px solid var(--border-color);">
+                      <svg viewBox="0 0 200 100" style="width: 100%; height: 100%; stroke: #D5D0C3; fill: none;" stroke-width="2">
+                        <line x1="10" y1="20" x2="190" y2="80" stroke="#DCD8CE" stroke-width="3" />
+                        <line x1="20" y1="90" x2="180" y2="10" stroke="#DCD8CE" stroke-width="2.5" />
+                        <path d="M 0 50 Q 80 80 200 40" stroke="#CAD3D0" stroke-width="4" />
+                        <circle cx="100" cy="50" r="30" stroke="#8C7965" stroke-width="1" stroke-dasharray="2 2" fill="rgba(140, 121, 101, 0.05)" />
+                        <circle cx="100" cy="50" r="3" fill="#8C7965" />
+                      </svg>
+
+                      <div style="position: absolute; right: 0.5rem; bottom: 0.5rem; background-color: #FFFFFF; border: 1px solid var(--border-color); border-radius: 0.25rem; padding: 0.25rem 0.45rem; font-size: 0.62rem; box-shadow: var(--shadow-subtle);">
+                        <strong style="color: var(--text-main);">Stadium Futsal Riau</strong>
+                        <div style="color: var(--text-secondary);">Sintetis &bull; Slot 19.00 Ready</div>
+                      </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary);">
+                      <span>14 Lapangan Terdata di Pekanbaru</span>
+                      <span style="color: var(--accent); font-weight: 600;">Pemesanan Realtime</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="font-family: monospace; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase;">
+                  GIS / Pengembangan Web
+                </div>
+
+                <h4 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--text-main); margin-top: 0.25rem; line-height: 1.35;">
+                  FUTSAL-GO: Platform Pencarian dan Pemesanan Lapangan Futsal Berbasis GIS
+                </h4>
+
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.6;">
+                  Aplikasi berbasis web dengan Geographic Information System (GIS) yang membantu pengguna menemukan lokasi lapangan futsal di sekitar Pekanbaru berdasarkan radius jarak dan pemesanan jadwal langsung.
+                </p>
+              </div>
+
+              <div style="padding-top: 0.75rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: var(--text-secondary);">Full-Stack &amp; GIS Developer</span>
+                <button class="btn btn-outline" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;" data-project-id="futsalgo">
+                  Detail &amp; Alur GIS &rarr;
+                </button>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 04 — PENGABDIAN KEPADA MASYARAKAT
+         Tiga slot dokumentasi terstruktur untuk kegiatan pengabdian
+         ========================================================================= -->
+    <section id="pengabdian" class="section-wrapper section-alt">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span>04 / Pengabdian</span>
+          <span class="section-tag-sub">Dampak Sosial &amp; Komunitas</span>
+        </div>
+
+        <div class="section-heading-wrap">
+          <h2 class="section-title">
+            Pengabdian kepada Masyarakat
+          </h2>
+          <p class="section-desc">
+            Tiga inisiatif dan kegiatan sosial berbasis transfer pengetahuan teknologi, pendampingan UMKM, dan literasi digital masyarakat.
+          </p>
+        </div>
+
+        <!-- 3 Slot Konten Kegiatan Fleksibel -->
+        <div class="community-cards-list">
+          
+          <!-- Slot 1 -->
+          <article class="community-card">
+            <div class="community-grid">
+              <div class="community-doc-slot">
+                <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>DOKUMENTASI 01</span>
+                  <span>2024</span>
+                </div>
+                <div style="margin: auto 0; padding: 1rem 0;">
+                  <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
+                    01
+                  </div>
+                  <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 500; color: var(--text-main);">
+                    Slot Dokumentasi Kegiatan
+                  </div>
+                  <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                    Dokumentasi sesi workshop langsung bersama kelompok peserta binaan.
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
+                  <span>Pekanbaru, Riau</span>
+                  <span style="font-family: monospace;">ARSIP_KEGIATAN</span>
+                </div>
+              </div>
+
+              <div class="community-content">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+                  <span class="project-tag" style="background-color: var(--bg-secondary);">KEGIATAN 01</span>
+                  <span style="color: var(--text-secondary); font-family: monospace;">2024</span>
+                  <span style="color: var(--text-secondary);">&bull;</span>
+                  <span style="color: var(--text-secondary);">Program Pengabdian Sivitas Akademika</span>
+                </div>
+
+                <h3 class="community-title">
+                  Pelatihan Literasi Digital dan Pengenalan Perangkat Lunak untuk Remaja Komunitas
+                </h3>
+
+                <p class="community-desc">
+                  Kegiatan pendampingan intensif bagi remaja dan generasi muda setempat untuk meningkatkan kemampuan literasi digital, dasar pemrograman visual, serta etika pemanfaatan internet secara produktif dan aman.
+                </p>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem;">
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+                    Peran: <span style="color: var(--accent); font-weight: 600;">Instruktur Teknis &amp; Fasilitator Materi</span>
+                  </div>
+                  <div class="contributions-list">
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Menyusun modul materi pengenalan komputer dan logika pemrograman dasar yang mudah dipahami pemula.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Membimbing langsung peserta dalam sesi praktik interaktif pembuatan halaman web sederhana.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Memberikan pemaparan mengenai peluang karir di industri kreatif dan pengembangan perangkat lunak.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slot 2 -->
+          <article class="community-card">
+            <div class="community-grid">
+              <div class="community-doc-slot">
+                <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>DOKUMENTASI 02</span>
+                  <span>2023</span>
+                </div>
+                <div style="margin: auto 0; padding: 1rem 0;">
+                  <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
+                    02
+                  </div>
+                  <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 500; color: var(--text-main);">
+                    Slot Dokumentasi Kegiatan
+                  </div>
+                  <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                    Dokumentasi pendampingan langsung di lokasi usaha peserta program.
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
+                  <span>Kampar, Riau</span>
+                  <span style="font-family: monospace;">ARSIP_KEGIATAN</span>
+                </div>
+              </div>
+
+              <div class="community-content">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+                  <span class="project-tag" style="background-color: var(--bg-secondary);">KEGIATAN 02</span>
+                  <span style="color: var(--text-secondary); font-family: monospace;">2023</span>
+                  <span style="color: var(--text-secondary);">&bull;</span>
+                  <span style="color: var(--text-secondary);">Inisiatif Pengabdian Masyarakat Terpadu</span>
+                </div>
+
+                <h3 class="community-title">
+                  Digitalisasi Pencatatan Administrasi dan Profil Usaha Mikro Berbasis Komunitas
+                </h3>
+
+                <p class="community-desc">
+                  Membantu para pelaku usaha mikro di lingkungan sekitar dalam mendokumentasikan profil produk mereka ke format digital serta menerapkan sistem pencatatan inventaris dan transaksi sederhana menggunakan spreadsheet.
+                </p>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem;">
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+                    Peran: <span style="color: var(--accent); font-weight: 600;">Koordinator Tim Pendamping Digital</span>
+                  </div>
+                  <div class="contributions-list">
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Menganalisis alur pencatatan manual pelaku usaha dan merancang template pembukuan digital yang ramah pengguna.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Memberikan pendampingan langsung tata cara pengisian template dan perlindungan backup data mandiri.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Membantu pembuatan profil digital toko untuk meningkatkan keterlihatan usaha di penelusuran lokal.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slot 3 -->
+          <article class="community-card">
+            <div class="community-grid">
+              <div class="community-doc-slot">
+                <div style="display: flex; justify-content: space-between; font-size: 0.68rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>DOKUMENTASI 03</span>
+                  <span>2023</span>
+                </div>
+                <div style="margin: auto 0; padding: 1rem 0;">
+                  <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem; color: var(--accent); font-weight: 600;">
+                    03
+                  </div>
+                  <div style="font-family: var(--font-serif); font-size: 0.88rem; font-weight: 500; color: var(--text-main);">
+                    Slot Dokumentasi Kegiatan
+                  </div>
+                  <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                    Dokumentasi sesi sosialisasi interaktif dan pembagian lembar panduan siber.
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 0.4rem;">
+                  <span>Pekanbaru, Riau</span>
+                  <span style="font-family: monospace;">ARSIP_KEGIATAN</span>
+                </div>
+              </div>
+
+              <div class="community-content">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+                  <span class="project-tag" style="background-color: var(--bg-secondary);">KEGIATAN 03</span>
+                  <span style="color: var(--text-secondary); font-family: monospace;">2023</span>
+                  <span style="color: var(--text-secondary);">&bull;</span>
+                  <span style="color: var(--text-secondary);">Sosialisasi Teknologi Informasi Masyarakat</span>
+                </div>
+
+                <h3 class="community-title">
+                  Edukasi Kesadaran Keamanan Siber dan Proteksi Data Pribadi Masyarakat
+                </h3>
+
+                <p class="community-desc">
+                  Program sosialisasi kepada masyarakat umum mengenai langkah-langkah praktis melindungi data pribadi, mengenali modus penipuan online (phishing), serta penerapan autentikasi dua faktor pada akun digital sehari-hari.
+                </p>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem;">
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+                    Peran: <span style="color: var(--accent); font-weight: 600;">Pemateri &amp; Penyusun Panduan Keamanan</span>
+                  </div>
+                  <div class="contributions-list">
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Merancang materi presentasi visual dan infografis ringkas yang mudah dipahami tanpa istilah teknis rumit.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Melakukan simulasi langsung cara mengenali tautan palsu dan mengamankan aplikasi pesan singkat.</span>
+                    </div>
+                    <div class="contribution-item">
+                      <span class="bullet-dot"></span>
+                      <span>Membagikan panduan cetak kiat keamanan digital keluarga kepada seluruh peserta kegiatan.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 05 — SERTIFIKAT
+         Galeri sertifikat dengan filter kategori dan modal perbesar (lightbox)
+         ========================================================================= -->
+    <section id="sertifikat" class="section-wrapper">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span>05 / Sertifikat</span>
+          <span class="section-tag-sub">Validasi Kompetensi</span>
+        </div>
+
+        <div class="section-heading-wrap">
+          <h2 class="section-title">
+            Sertifikat dan Pelatihan
+          </h2>
+          <p class="section-desc">
+            Kumpulan sertifikasi teknis, pelatihan profesional, dan kompetensi terverifikasi yang mendukung pengerjaan proyek.
+          </p>
+        </div>
+
+        <!-- Filter Bar Kategori -->
+        <div class="cert-filter-bar">
+          <button class="filter-btn active" data-filter="all">Semua Kategori</button>
+          <button class="filter-btn" data-filter="Mobile Development">Mobile Development</button>
+          <button class="filter-btn" data-filter="Artificial Intelligence">Artificial Intelligence</button>
+          <button class="filter-btn" data-filter="Web Development">Web Development</button>
+          <button class="filter-btn" data-filter="Design">UI/UX Design</button>
+          <button class="filter-btn" data-filter="3D &amp; Interactive">3D &amp; Virtual Reality</button>
+        </div>
+
+        <!-- Grid Galeri Sertifikat -->
+        <div class="certificates-grid">
+          
+          <!-- Cert 1 -->
+          <div class="cert-card" 
+               data-cert-name="Pengembang Aplikasi Android Native Profesional"
+               data-cert-issuer="Platform Sertifikasi Keahlian Terakreditasi"
+               data-cert-year="2024"
+               data-cert-category="Mobile Development"
+               data-cert-id="CERT-ANDR-2024-8841"
+               data-cert-desc="Sertifikasi kompetensi rekayasa aplikasi Android menggunakan Kotlin, arsitektur MVVM, Coroutines, dan integrasi API RESTful.">
+            <div>
+              <div class="cert-thumb-preview">
+                <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>Mobile Dev</span>
+                  <span style="color: var(--accent); font-weight: 600;">2024</span>
+                </div>
+                <div style="margin: auto 0;">
+                  <div style="font-size: 1.5rem; color: var(--accent); margin-bottom: 0.25rem;">&#127891;</div>
+                  <div style="font-family: var(--font-serif); font-size: 0.8rem; font-weight: 600; color: var(--text-main);">
+                    Pengembang Android Native
+                  </div>
+                  <div style="font-size: 0.68rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                    Platform Terakreditasi
+                  </div>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--accent); font-weight: 500;">
+                  Klik untuk Memperbesar &rarr;
+                </div>
+              </div>
+
+              <div style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.25rem;">
+                Platform Sertifikasi Terakreditasi &bull; 2024
+              </div>
+              <h3 class="cert-name">
+                Pengembang Aplikasi Android Native Profesional
+              </h3>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+                Kompetensi rekayasa aplikasi Android menggunakan Kotlin, MVVM, dan Coroutines.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem; font-size: 0.75rem; color: var(--accent); font-weight: 600;">
+              Lihat Lembar Sertifikat
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card" 
+               data-cert-name="Spesialisasi Computer Vision dan Deteksi Objek"
+               data-cert-issuer="Lembaga Pelatihan Kecerdasan Buatan Terbuka"
+               data-cert-year="2024"
+               data-cert-category="Artificial Intelligence"
+               data-cert-id="CERT-AI-CV-2024-1029"
+               data-cert-desc="Penguasaan pipeline pelatihan model computer vision YOLOv8, augmentasi dataset, dan ekspor model ke format edge inference TensorFlow Lite.">
+            <div>
+              <div class="cert-thumb-preview">
+                <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>Artificial Intelligence</span>
+                  <span style="color: var(--accent); font-weight: 600;">2024</span>
+                </div>
+                <div style="margin: auto 0;">
+                  <div style="font-size: 1.5rem; color: var(--accent); margin-bottom: 0.25rem;">&#127891;</div>
+                  <div style="font-family: var(--font-serif); font-size: 0.8rem; font-weight: 600; color: var(--text-main);">
+                    Computer Vision &amp; Deteksi Objek
+                  </div>
+                  <div style="font-size: 0.68rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                    Lembaga Pelatihan Terbuka
+                  </div>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--accent); font-weight: 500;">
+                  Klik untuk Memperbesar &rarr;
+                </div>
+              </div>
+
+              <div style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.25rem;">
+                Lembaga AI Terbuka &bull; 2024
+              </div>
+              <h3 class="cert-name">
+                Spesialisasi Computer Vision dan Deteksi Objek
+              </h3>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+                Pelatihan computer vision YOLOv8 dan ekspor model edge TensorFlow Lite.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem; font-size: 0.75rem; color: var(--accent); font-weight: 600;">
+              Lihat Lembar Sertifikat
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card" 
+               data-cert-name="Full-Stack Web Application Engineering"
+               data-cert-issuer="Akademi Pemrograman Berkelanjutan"
+               data-cert-year="2023"
+               data-cert-category="Web Development"
+               data-cert-id="CERT-FSW-2023-4512"
+               data-cert-desc="Kompetensi perancangan arsitektur backend MVC, normalisasi database relasional MySQL, autentikasi sesi, serta integrasi antarmuka modern.">
+            <div>
+              <div class="cert-thumb-preview">
+                <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>Web Development</span>
+                  <span style="color: var(--accent); font-weight: 600;">2023</span>
+                </div>
+                <div style="margin: auto 0;">
+                  <div style="font-size: 1.5rem; color: var(--accent); margin-bottom: 0.25rem;">&#127891;</div>
+                  <div style="font-family: var(--font-serif); font-size: 0.8rem; font-weight: 600; color: var(--text-main);">
+                    Full-Stack Web Engineering
+                  </div>
+                  <div style="font-size: 0.68rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                    Akademi Pemrograman
+                  </div>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--accent); font-weight: 500;">
+                  Klik untuk Memperbesar &rarr;
+                </div>
+              </div>
+
+              <div style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.25rem;">
+                Akademi Pemrograman &bull; 2023
+              </div>
+              <h3 class="cert-name">
+                Full-Stack Web Application Engineering
+              </h3>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+                Perancangan arsitektur backend MVC, skema MySQL, dan keamanan sistem.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem; font-size: 0.75rem; color: var(--accent); font-weight: 600;">
+              Lihat Lembar Sertifikat
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card" 
+               data-cert-name="Perancangan Pengalaman Pengguna (UI/UX Design)"
+               data-cert-issuer="Institut Desain Produk Digital"
+               data-cert-year="2023"
+               data-cert-category="Design"
+               data-cert-id="CERT-UIUX-2023-7721"
+               data-cert-desc="Sertifikasi proses perancangan produk digital mulai dari riset kebutuhan pengguna, wireframing Figma, hingga penyusunan sistem desain terstandar.">
+            <div>
+              <div class="cert-thumb-preview">
+                <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>Design</span>
+                  <span style="color: var(--accent); font-weight: 600;">2023</span>
+                </div>
+                <div style="margin: auto 0;">
+                  <div style="font-size: 1.5rem; color: var(--accent); margin-bottom: 0.25rem;">&#127891;</div>
+                  <div style="font-family: var(--font-serif); font-size: 0.8rem; font-weight: 600; color: var(--text-main);">
+                    UI/UX Product Design
+                  </div>
+                  <div style="font-size: 0.68rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                    Institut Desain Digital
+                  </div>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--accent); font-weight: 500;">
+                  Klik untuk Memperbesar &rarr;
+                </div>
+              </div>
+
+              <div style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.25rem;">
+                Institut Desain &bull; 2023
+              </div>
+              <h3 class="cert-name">
+                Perancangan Pengalaman Pengguna (UI/UX Design)
+              </h3>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+                Prinsip riset pengguna, wireframing, Design System, dan validasi heuristik.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem; font-size: 0.75rem; color: var(--accent); font-weight: 600;">
+              Lihat Lembar Sertifikat
+            </div>
+          </div>
+
+          <!-- Cert 5 -->
+          <div class="cert-card" 
+               data-cert-name="Fundamental Pemodelan 3D dan Tekstur PBR"
+               data-cert-issuer="Pusat Pelatihan Grafika Komputer &amp; Media"
+               data-cert-year="2023"
+               data-cert-category="3D &amp; Interactive"
+               data-cert-id="CERT-3D-2023-3398"
+               data-cert-desc="Keahlian pemodelan poligon keras (hard-surface), UV unwrapping, pembuatan material berbasis fisika (PBR), dan persiapan aset untuk game engine.">
+            <div>
+              <div class="cert-thumb-preview">
+                <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-family: monospace; color: var(--text-secondary);">
+                  <span>3D &amp; Interactive</span>
+                  <span style="color: var(--accent); font-weight: 600;">2023</span>
+                </div>
+                <div style="margin: auto 0;">
+                  <div style="font-size: 1.5rem; color: var(--accent); margin-bottom: 0.25rem;">&#127891;</div>
+                  <div style="font-family: var(--font-serif); font-size: 0.8rem; font-weight: 600; color: var(--text-main);">
+                    Pemodelan 3D &amp; Tekstur PBR
+                  </div>
+                  <div style="font-size: 0.68rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                    Pusat Grafika Komputer
+                  </div>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--accent); font-weight: 500;">
+                  Klik untuk Memperbesar &rarr;
+                </div>
+              </div>
+
+              <div style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.25rem;">
+                Pusat Grafika &bull; 2023
+              </div>
+              <h3 class="cert-name">
+                Fundamental Pemodelan 3D dan Tekstur PBR
+              </h3>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">
+                Pemodelan hard-surface, unwrapping UV, teksturisasi PBR, dan optimasi mesh.
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 0.65rem; font-size: 0.75rem; color: var(--accent); font-weight: 600;">
+              Lihat Lembar Sertifikat
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 06 — KONTAK (Section Terakhir)
+         Ajakan kolaborasi, salin email 1-klik, link profil, form kontak, dan footer
+         ========================================================================= -->
+    <footer id="kontak" class="section-wrapper section-alt" style="padding-bottom: 1.5rem;">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span>06 / Kontak</span>
+          <span class="section-tag-sub">Terhubung &amp; Kolaborasi</span>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Sisi Kiri: Deskripsi & Email Copy -->
+          <div class="contact-left">
+            <h2 class="section-title">
+              Mari Berdiskusi dan Memulai Kerja Sama
+            </h2>
+
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;">
+              Saya selalu menyambut percakapan mengenai proyek rekayasa perangkat lunak, perancangan antarmuka, eksplorasi teknologi baru, maupun peluang kolaborasi profesional.
+            </p>
+
+            <!-- Box Salin Email 1-Klik -->
+            <div class="email-copy-box">
+              <div style="font-size: 0.68rem; font-family: monospace; color: var(--text-secondary); text-transform: uppercase;">
+                Alamat Surat Elektronik Utama
+              </div>
+              <div class="email-action-row">
+                <a href="mailto:kontak.raihanpratama@gmail.com" class="email-address" id="emailAddressText">
+                  kontak.raihanpratama@gmail.com
+                </a>
+                <button class="btn btn-secondary" id="copyEmailBtn" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                  <span>Salin Alamat Email</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Metadata Lokasi & Jam Kerja -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.78rem; color: var(--text-secondary);">
+              <div>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.2rem;">Lokasi Kerja:</strong>
+                <span>Pekanbaru, Riau &bull; Indonesia</span>
+              </div>
+              <div>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.2rem;">Jam Respons:</strong>
+                <span>Senin – Jumat, 09.00 – 18.00 WIB</span>
+              </div>
+            </div>
+
+            <!-- Tautan Profil Profesional -->
+            <div style="margin-top: 0.5rem;">
+              <div style="font-size: 0.7rem; font-family: monospace; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 0.65rem;">
+                Kanal Profesional:
+              </div>
+              <div class="social-links-grid">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-card">
+                  <div>
+                    <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-main);">LinkedIn</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">linkedin.com/in/raihan-pratama</div>
+                  </div>
+                  <span style="color: var(--accent); font-size: 0.85rem;">&rarr;</span>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-card">
+                  <div>
+                    <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-main);">GitHub</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">github.com/raihan-pratama</div>
+                  </div>
+                  <span style="color: var(--accent); font-size: 0.85rem;">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sisi Kanan: Formulir Kirim Pesan -->
+          <div>
+            <div class="contact-form-box">
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.25rem;">
+                Kirimkan Pesan Singkat
+              </h3>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Formulir langsung untuk mendiskusikan peluang kerja, proyek lepas, atau sekadar bertukar sapa.
+              </p>
+
+              <form id="contactForm">
+                <div class="form-group">
+                  <label class="form-label" for="senderName">Nama Lengkap</label>
+                  <input type="text" id="senderName" class="form-input" placeholder="Contoh: Pratama Wijaya" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="senderEmail">Alamat Email</label>
+                  <input type="email" id="senderEmail" class="form-input" placeholder="nama@institusi.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="senderSubject">Subjek Pembahasan</label>
+                  <input type="text" id="senderSubject" class="form-input" placeholder="Peluang Proyek / Kolaborasi Teknis">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="senderMessage">Pesan</label>
+                  <textarea id="senderMessage" class="form-textarea" rows="4" placeholder="Tuliskan latar belakang rencana atau pertanyaan Anda di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  <span>Kirimkan Pesan</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+
+              <!-- Pesan Sukses Form -->
+              <div id="contactSuccess" style="display: none; padding: 1.5rem; text-align: center;">
+                <div style="font-size: 1.75rem; color: #10b981; margin-bottom: 0.5rem;">&#10003;</div>
+                <div style="font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--text-main);">
+                  Terima Kasih, Pesan Telah Dikirim
+                </div>
+                <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.35rem; line-height: 1.6;">
+                  Saya akan meninjau pesan Anda dan segera memberikan tanggapan melalui alamat email yang dicantumkan.
+                </p>
+                <button type="button" id="resetContactForm" style="margin-top: 1rem; font-size: 0.75rem; color: var(--accent); font-weight: 600; cursor: pointer;">
+                  Kirim pesan lain &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bawah -->
+        <div class="site-footer">
+          <div>
+            &copy; 2024 M. Raihan Pratama. Seluruh hak cipta dilindungi.
+          </div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <span>Identitas Visual Warm Editorial</span>
+            <span>&bull;</span>
+            <a href="#profil" style="color: var(--accent); font-weight: 500;">Kembali ke Atas &uarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <!-- =========================================================================
+       MODAL PRATINJAU DETAIL PROYEK
+       ========================================================================= -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <span class="project-tag" id="modalProjectNumber">PROYEK 01</span>
+          <span class="project-category-text" id="modalProjectCategory">Pemodelan 3D</span>
+        </div>
+        <button class="close-btn" id="closeProjectModal" aria-label="Tutup jendela pratinjau">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.4rem;">
+            <span id="modalProjectYear" style="font-family: monospace;">2024</span>
+            <span>&bull;</span>
+            <span id="modalProjectContext">Konteks Proyek</span>
+          </div>
+          <h2 id="modalProjectTitle" style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; color: var(--text-main); line-height: 1.3;">
+            Judul Proyek Lengkap
+          </h2>
+          <p id="modalProjectSummary" style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.65rem; line-height: 1.65;">
+            Deskripsi ringkas proyek.
+          </p>
+        </div>
+
+        <!-- Spesifikasi Peran & Tech -->
+        <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.78rem;">
+          <div>
+            <span style="color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Peran &amp; Tanggung Jawab:</span>
+            <strong id="modalProjectRole" style="color: var(--text-main);">Role Name</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">Teknologi Utama:</span>
+            <div id="modalProjectTech" style="display: flex; flex-wrap: wrap; gap: 0.35rem;"></div>
+          </div>
+        </div>
+
+        <!-- Tantangan & Solusi Rekayasa -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div style="border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; background-color: var(--bg-main);">
+            <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+              Tantangan Rekayasa
+            </div>
+            <p id="modalProjectChallenge" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6;">
+              Tantangan teknis...
+            </p>
+          </div>
+
+          <div style="border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; background-color: var(--bg-main);">
+            <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">
+              Solusi &amp; Pendekatan Teknis
+            </div>
+            <p id="modalProjectSolution" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6;">
+              Solusi yang diterapkan...
+            </p>
+          </div>
+        </div>
+
+        <!-- Kontribusi & Luaran -->
+        <div>
+          <div style="font-family: var(--font-serif); font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.65rem;">
+            Poin Utama Proyek
+          </div>
+          <ul id="modalProjectHighlights" style="font-size: 0.82rem; color: var(--text-main); padding-left: 1.25rem;"></ul>
+
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color);">
+            <div style="font-size: 0.72rem; font-family: monospace; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.4rem;">
+              Artefak &amp; Luaran Kerja:
+            </div>
+            <ul id="modalProjectDeliverables" style="font-size: 0.78rem; color: var(--text-secondary); padding-left: 1.25rem;"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <span style="font-size: 0.72rem; color: var(--text-secondary); font-family: monospace;">Dokumentasi Teknis Terverifikasi</span>
+        <button class="btn btn-primary" id="modalCloseFooter" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+          Tutup Pratinjau
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL LIGHTBOX ZOOM SERTIFIKAT
+       ========================================================================= -->
+  <div class="modal-overlay" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalName">
+    <div class="modal-card" style="max-width: 44rem;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem;">
+          <span class="project-tag" id="certModalCategory">Kategori</span>
+          <span style="color: var(--text-secondary); font-family: monospace;" id="certModalYear">2024</span>
+        </div>
+        <button class="close-btn" id="closeCertModal" aria-label="Tutup pratinjau sertifikat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Tampilan Lembar Sertifikat Editorial -->
+        <div style="background-color: #FAF8F5; border: 2px solid var(--border-color); border-radius: 0.65rem; padding: 2rem; text-align: center; display: flex; flex-direction: column; gap: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; font-size: 0.72rem; color: var(--text-secondary);">
+            <span>Diterbitkan oleh: <strong style="color: var(--accent);" id="certModalIssuer">Institusi</strong></span>
+            <span style="color: #047857; font-weight: 600;">&#10003; Kredensial Terverifikasi</span>
+          </div>
+
+          <div style="padding: 1.5rem 0;">
+            <div style="font-size: 0.68rem; font-family: monospace; color: var(--text-secondary); text-transform: uppercase;">
+              Sertifikat Keahlian &amp; Kompetensi
+            </div>
+            <h3 id="certModalName" style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; color: var(--text-main); margin-top: 0.5rem;">
+              Nama Sertifikat
+            </h3>
+            <p id="certModalDesc" style="font-size: 0.85rem; color: var(--text-secondary); max-width: 32rem; margin: 0.65rem auto 0; line-height: 1.6;">
+              Deskripsi kredensial sertifikat.
+            </p>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 0.75rem; font-size: 0.7rem; font-family: monospace; color: var(--text-secondary);">
+            <span id="certModalId">ID Kredensial</span>
+            <span id="certModalYearFooter">Tahun Penerbitan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <span style="font-size: 0.72rem; color: var(--text-secondary);">Format Dokumen: Dokumen Digital Terstandar</span>
+        <button class="btn btn-primary" id="finishCertModal" style="padding: 0.4rem 1rem; font-size: 0.75rem;">
+          Selesai
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Vanilla JavaScript -->
+  <script src="js/script.js"></script>
+</body>
 </html>
