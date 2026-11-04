@@ -245,37 +245,6 @@ const PROJECTS_DATA = {
         caption: 'Skala tipografi, palet warna perbankan, variasi tombol aksi, dan tabel data terstruktur.'
       }
     ]
-  },
-  'futsalgo': {
-    number: '05',
-    category: 'GIS / Pengembangan Web',
-    year: '2023',
-    context: 'Aplikasi Layanan Olahraga Pekanbaru',
-    title: 'FUTSAL-GO: Platform Pencarian dan Pemesanan Lapangan Futsal Berbasis GIS',
-    summary: 'Aplikasi berbasis web dengan Geographic Information System (GIS) yang membantu pengguna menemukan lokasi lapangan futsal di sekitar Pekanbaru berdasarkan radius dan ketersediaan jadwal.',
-    role: 'Full-Stack Web & GIS Developer',
-    tech: ['PHP', 'JavaScript', 'Leaflet.js', 'OpenStreetMap', 'MySQL'],
-    challenge: 'Menghubungkan data lokasi spasial lapangan futsal dengan sistem reservasi waktu realtime.',
-    solution: 'Mengintegrasikan peta interaktif Leaflet.js dengan query radius jarak terdekat dan kalender sewa.',
-    highlights: [
-      'Pemetaan titik koordinat lapangan futsal di Pekanbaru ke dalam peta digital interaktif.',
-      'Pencarian lokasi berbasis radius jarak terdekat dari pengguna.',
-      'Detail fasilitas lapangan dan sistem pemesanan jadwal langsung.'
-    ],
-    slides: [
-      {
-        title: 'Tampilan Peta Spasial Interaktif Pekanbaru',
-        caption: 'Penanda titik lokasi lapangan futsal dengan filter radius jarak dan jenis lantai.'
-      },
-      {
-        title: 'Halaman Detail Fasilitas & Ulasan',
-        caption: 'Informasi kelayakan rumput sintetis/vinyl, penerangan lampu, dan ketersediaan shower.'
-      },
-      {
-        title: 'Alur Pemesanan Jadwal Realtime',
-        caption: 'Pemilihan slot waktu sewa lapangan dan konfirmasi tanda jadi digital.'
-      }
-    ]
   }
 };
 
