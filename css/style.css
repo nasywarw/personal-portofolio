@@ -581,27 +581,16 @@ button {
   padding: 0 0.15rem;
 }
 
-/* SECTION 03 — PORTOFOLIO (Card Rapi, Nyaman & 4 Kolom Satu Row di Desktop) */
+/* SECTION 03 — PORTOFOLIO (3 di Atas, 2 di Bawah Tengah di Desktop) */
 .projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-@media (min-width: 576px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .projects-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .project-card-simple {
+  width: 100%;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
@@ -612,6 +601,18 @@ button {
   justify-content: space-between;
   cursor: pointer;
   transition: all var(--transition-fast);
+}
+
+@media (min-width: 640px) {
+  .project-card-simple {
+    width: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (min-width: 992px) {
+  .project-card-simple {
+    width: calc((100% - 3rem) / 3);
+  }
 }
 
 .project-card-simple:hover {

@@ -210,6 +210,25 @@ const PROJECTS_DATA = {
       'Perancangan UI/UX website dashboard analitik pedagang.',
       'Penyusunan Design System terstandar berpedoman pada identitas bank syariah.'
     ]
+  },
+  'nlp-toxic': {
+    number: '05',
+    category: 'Natural Language Processing / Deep Learning',
+    year: '2025',
+    context: 'Proyek Kelompok UAS — Natural Language Processing',
+    title: 'Perbandingan Kinerja Model SimpleRNN, LSTM, dan GRU untuk Klasifikasi Teks Toxic serta Parafase Teks Toxic Menggunakan Grok 3',
+    summary: 'Penelitian komparatif berbasis Deep Learning dan Natural Language Processing (NLP) yang dikerjakan secara berkelompok untuk mendeteksi ujaran kebencian (toxic comment) pada dataset Jigsaw Multilingual. Proyek ini membandingkan kinerja model SimpleRNN, LSTM, dan GRU, serta mengintegrasikan LLM Grok 3 untuk memparafrasekan teks toksik menjadi alternatif kalimat yang etis dan konstruktif.',
+    role: 'NLP & Deep Learning Contributor (Proyek Kelompok)',
+    tech: ['Python', 'TensorFlow / Keras', 'SimpleRNN', 'LSTM', 'GRU', 'NLP', 'Grok 3 (LLM)', 'ROC-AUC'],
+    hideCarousel: true,
+    actionUrl: 'https://drive.google.com/file/d/1ana6k9eKVh6dF3I_mj-aQbzirzZ47j_Y/view?usp=sharing',
+    actionLabel: 'Lihat Draft Jurnal',
+    actionIcon: 'document',
+    highlights: [
+      'Eksplorasi & Preprocessing Dataset: Mengolah dataset Jigsaw Multilingual Toxic Comment dengan penyederhanaan multi-label menjadi klasifikasi biner (toxic dan non-toxic).',
+      'Komparasi Model Deep Learning: Melatih dan menguji tiga arsitektur recurrent neural network, di mana GRU meraih performa ROC-AUC tertinggi (0.9791), disusul LSTM (0.9767), dan SimpleRNN (0.8682).',
+      'Parafrase Kalimat Menggunakan Grok 3: Memanfaatkan kemampuan LLM Grok 3 untuk mereformulasi komentar berkategori toksik menjadi bahasa yang lebih positif, santun, dan edukatif tanpa mengubah esensi pesan.'
+    ]
   }
 };
 
@@ -355,6 +374,16 @@ function initProjectModalWithCarousel() {
               <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
               <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
               <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+            </svg>
+          `;
+        } else if (data.actionIcon === 'document' || data.actionIcon === 'drive') {
+          actionIcon.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
             </svg>
           `;
         } else {
